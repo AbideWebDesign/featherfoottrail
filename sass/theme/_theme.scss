@@ -1,0 +1,100 @@
+h1 {
+	font-weight: $h1-font-weight;
+	line-height: $h1-line-height;
+}
+p {
+	font-size: $font-size-base;
+}
+.btn-white {
+	@extend .btn-light;
+}
+.custom-select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+}
+// Resource Search
+#wrapper-resource {
+	.facetwp-facet {
+		margin-bottom: 1em;
+	}
+	.facetwp-facet-per_page_resources {
+		@extend .input-group;
+		
+		.facetwp-per-page-select {
+			@extend .custom-select;
+		}
+	}
+	.sidebar {
+		border: 1px solid #ccc;
+	
+		.facetwp-search-wrap {
+			display: block;
+			
+			.facetwp-btn {
+				top: 10px;
+			}
+		}
+		.facetwp-type-search {
+			padding: 0 .5em;
+			
+			.facetwp-search {
+				@extend .form-control;
+				width: 100%;
+			}
+		}
+		.facetwp-type-checkboxes .facetwp-checkbox {
+		    background: none;
+			padding: .75em;
+		    margin-bottom: 0;
+		    border-bottom: 1px dotted #ccc;
+		    font-size: $font-size-sm;
+		    line-height: 100%;
+		}
+		.facetwp-depth {
+			margin-left: 0;
+			background-color: #f7f7f7;
+			
+			.facetwp-depth {
+				background-color: #ccc;
+			}
+		}
+		.facetwp-checkbox.checked {
+		    	background: none;
+		}
+		.facetwp-type-checkboxes .facetwp-checkbox::before {
+		    display: inline-block;
+		    content: "\f0c8";
+		    font-family: "Font Awesome 5 Free";
+		    font-size: 24px;
+		    margin-right: .5rem;
+		    vertical-align: middle;
+		}
+		.facetwp-type-checkboxes .facetwp-checkbox.checked::before {
+		    content: "\f14a";
+		}
+	}
+}
+
+//Memberpress
+.mepr-form {
+	.mp-form-row {
+		@extend .form-group;
+		
+		input {
+			@extend .form-control;
+			
+			&[type=checkbox] {
+				display: inline-block;
+				width: auto;
+				vertical-align: middle;
+			}
+		}
+	}
+	.mepr-submit {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+	.mepr-select-field {
+		@extend .custom-select;
+	}
+}
