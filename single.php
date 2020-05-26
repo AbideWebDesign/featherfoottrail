@@ -82,7 +82,7 @@ foreach( $cats as $category ) {
 					
 				<?php endif; ?>
 				
-				<?php if ( current_user_can('mepr-active','rules:1462') ): ?>
+				<?php if ( current_user_can('mepr-active') ): ?>
 				
 					<?php if ( have_rows('media_files') ): ?>
 					
@@ -256,7 +256,7 @@ foreach( $cats as $category ) {
 			
 			<div class="col-xl-4">
 				
-				<?php if ( !current_user_can('mepr-active','rules:1462') ): ?>
+				<?php if ( !current_user_can('mepr-active') ): ?>
 				
 					<div class="bg-light p-3">
 						
