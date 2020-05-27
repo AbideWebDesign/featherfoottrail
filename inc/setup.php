@@ -57,6 +57,15 @@ if ( ! function_exists( 'featherfoottrail_setup' ) ) {
 
 add_image_size('Side Cover', 1067, 1600, true);
 
+// Remove tags support from posts
+add_action('init', 'fft_unregister_tags');
+
+function fft_unregister_tags() {
+	
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+    
+}
+
 add_action( 'init', 'fft_register_cpts' );
 
 function fft_register_cpts() {
