@@ -94,7 +94,7 @@ foreach( $cats as $category ) {
 							
 							<?php if ( $media['mime_type'] == 'application/pdf' ): ?>
 							
-								<a href="<?php echo $media['url']; ?>" target="_blank"><i class="fa fa-download"></i> <?php echo $media['title']; ?></a>
+								<i class="fa fa-download text-primary"></i> <a class="media-download" href="<?php echo $media['url']; ?>" target="_blank"><?php echo $media['title']; ?></a>
 							
 							<?php else: ?>
 							
@@ -280,4 +280,40 @@ foreach( $cats as $category ) {
 
 </div><!-- #single-wrapper -->
 
+<div class="modal fade" id="modalNotification" tabindex="-1" role="dialog" aria-labelledby="modalNotification" aria-hidden="true">
+	
+	<div class="modal-dialog" role="document">
+	
+		<div class="modal-content">
+	
+			<div class="modal-header">
+	
+				<h5 class="modal-title" id="modalNotificationLable">Notice</h5>
+	
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	
+					<span aria-hidden="true">&times;</span>
+	
+				</button>
+	
+			</div>
+	
+			<div class="modal-body">
+	
+				<p class="mb-0"><?php the_field('resource_disclaimer', 'options'); ?></p>
+	
+			</div>
+	
+			<div class="modal-footer">
+	
+				<a id="resourceLink" href="#" class="btn btn-primary btn-block" target="_blank">Proceed</a>
+	
+			</div>
+	
+		</div>
+	
+	</div>
+
+</div>
+		
 <?php get_footer();

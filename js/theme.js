@@ -7032,9 +7032,32 @@
   }
 })();
 
-$(document).on('facetwp-refresh', function() {
-	$('.facetwp-template').animate({ opacity: 0 }, 1000);
-});
-$(document).on('facetwp-loaded', function() {
-	$('.facetwp-template').animate({ opacity: 1 }, 1000);
+// Theme Specific
+
+jQuery(document).ready(function($) {	
+	
+	$(document).on('facetwp-refresh', function() {
+	
+		$('.facetwp-template').animate({ opacity: 0 }, 1000);
+	
+	});
+
+	$(document).on('facetwp-loaded', function() {
+		
+		$('.facetwp-template').animate({ opacity: 1 }, 1000);
+		
+	});
+
+	$('a.media-download').on('click', function (e) {
+		
+		e.preventDefault();
+		
+		var link = $(this).attr('href');
+		
+		$('#resourceLink').attr('href', $(this).attr('href'));
+		
+		$('#modalNotification').modal('show');
+				
+	});
+	
 });
