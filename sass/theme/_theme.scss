@@ -5,12 +5,44 @@ h1 {
 p {
 	font-size: $font-size-base;
 }
+button, .btn {
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
 .btn-white {
 	@extend .btn-light;
 }
 .custom-select {
 	-webkit-appearance: none;
     -moz-appearance: none;
+}
+.wrapper {
+	padding: 100px 0 !important;
+}
+.wrapper-sm {
+	padding: 50px 0 !important;
+}
+.wrapper-sm-bottom {
+	padding: 100px 0 50px 0 !important;
+}
+.wrapper-sm-top {
+	padding: 50px 0 100px 0 !important;
+}
+@include media-breakpoint-down(md) {
+	.wrapper {
+		padding: 50px 0 !important;
+	}
+	.wrapper-sm {
+		padding: 25px 0 !important;
+	}
+	.wrapper-sm-bottom {
+		padding: 50px 0 25px 0 !important;
+	}
+	.wrapper-sm-top {
+		padding: 25px 0 50px 0 !important;
+	}
 }
 
 // Resource Search
@@ -100,7 +132,7 @@ p {
 			}
 		}
 	}
-	.mepr-submit {
+	.mepr-submit, .mepr-share-button {
 		@extend .btn;
 		@extend .btn-primary;
 	}

@@ -254,6 +254,14 @@ foreach( $cats as $category ) {
 					
 				<?php endif; ?>
 				
+				<?php if ( get_field('jigsaw_puzzle') ): ?>
+						
+					<?php $url = get_field('jigsaw_puzzle'); ?>
+												
+					<iframe src="<?php echo $url; ?>&amp;view=iframe" style="width:100%;height:600px" frameborder=0 allowfullscreen></iframe>
+										
+				<?php endif; ?>
+				
 			</div>
 			
 			<div class="col-xl-4">

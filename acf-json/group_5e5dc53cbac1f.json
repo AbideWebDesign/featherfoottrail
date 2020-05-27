@@ -312,6 +312,22 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5ecedcfb8e736",
+            "label": "Jigsaw Puzzle",
+            "name": "jigsaw_puzzle",
+            "type": "url",
+            "instructions": "Copy and paste URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -331,5 +347,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590447049
+    "modified": 1590615420
 }

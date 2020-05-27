@@ -7,7 +7,34 @@ $teal:		#72c6a6;
 $yellow:	#fbd402;
 $light:		#f8f8f8;
 $secondary:	$teal;
+$gray-400: #ced4da;
 
+/* Typography */
+$font-size-base: 1rem;
+$font-size-lg: $font-size-base * 1.15;
+$font-family-sans-serif:	proxima-nova, sans-serif;
+$line-height-base: 1.7;
+$line-height-sm: 1.4;
 
+$h1-font-size: $font-size-base * 3.5;
 $h1-font-weight: 700;
 $h1-line-height: 1.138888889;
+$h2-font-size: $font-size-base * 2.2;
+$h2-font-size-sm: $h2-font-size - .5rem;
+$h3-font-size: $font-size-base * 1.60;
+
+$h6-font-size: $font-size-base - .08rem;
+
+$font-size-xs: $font-size-base - .2rem;
+
+/* Grid */
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1300px
+);
+
+/* Forms */
+$input-focus-border-color: $gray-400;
+$input-focus-box-shadow: none;
