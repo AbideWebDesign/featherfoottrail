@@ -76,6 +76,14 @@ p {
 	}
 }
 // Single Resource
+.video-trigger {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    cursor: pointer;
+}
 
 //Memberpress
 .mepr-form {

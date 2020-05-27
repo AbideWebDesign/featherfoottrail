@@ -7038,13 +7038,13 @@ jQuery(document).ready(function($) {
 	
 	$(document).on('facetwp-refresh', function() {
 	
-		$('.facetwp-template').animate({ opacity: 0 }, 1000);
+		$('.facetwp-template').animate({ opacity: 0 }, 100);
 	
 	});
 
 	$(document).on('facetwp-loaded', function() {
 		
-		$('.facetwp-template').animate({ opacity: 1 }, 1000);
+		$('.facetwp-template').animate({ opacity: 1 }, 100);
 		
 	});
 
@@ -7058,6 +7058,26 @@ jQuery(document).ready(function($) {
 		
 		$('#modalNotification').modal('show');
 				
+	});
+		
+	var trigger = $('.video-trigger');
+	
+	trigger.click(function(e) {
+	
+		e.preventDefault();
+		
+		var theModal = $(this).data('target');
+		var videoSRC = $(this).attr('src');
+		var videoSRCauto = videoSRC + '?autoplay=1';
+		
+		$(theModal + ' iframe').attr('src', videoSRCauto);
+		
+		$(theModal).on('hidden.bs.modal', function(e) {
+		 
+			$(theModal + ' iframe').attr('src', '');
+		
+		});
+		
 	});
 	
 });
