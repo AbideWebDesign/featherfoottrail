@@ -12,7 +12,7 @@ get_header();
 
 ?>
 
-<div class="wrapper" id="single-wrapper">
+<div class="wrapper bg-secondary" id="single-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 
@@ -24,7 +24,15 @@ get_header();
 				
 				<div class="text-sm mb-2 pb-2 border-bottom text-center">
 					
-					Categories:
+					Categories: 
+					
+					<?php $cats = get_field('categories'); ?>
+					
+					<?php foreach($cats as $cat): ?>
+					
+						| <a href="<?php echo home_url(); ?>/resources/?_categories=<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+					
+					<?php endforeach; ?>
 					
 				</div>
 			

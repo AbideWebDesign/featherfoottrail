@@ -11,8 +11,8 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
-<div class="wrapper" id="wrapper-footer">
+</div>
+<div class="bg-primary py-3" id="wrapper-footer">
 
 	<div class="container">
 
@@ -24,6 +24,8 @@ defined( 'ABSPATH' ) || exit;
 
 					<div class="site-info">
 
+						<?php the_field('footer_bottom_text', 'options'); ?>
+					
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
@@ -35,8 +37,6 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- container end -->
 
 </div><!-- wrapper end -->
-
-</div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
 

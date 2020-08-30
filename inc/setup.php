@@ -34,7 +34,7 @@ if ( ! function_exists( 'featherfoottrail_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'featherfoottrail' ),
+			'primary' => __( 'Primary Menu - Mobile', 'featherfoottrail' ),
 		) );
 
 		/*
@@ -181,10 +181,12 @@ if ( ! function_exists( 'featherfoottrail_all_excerpts_get_more_link' ) ) {
 	 * @return string
 	 */
 	function featherfoottrail_all_excerpts_get_more_link( $post_excerpt ) {
+/*
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary featherfoottrail-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More...',
+			$post_excerpt = $post_excerpt . '<p><a class="btn-alt" href="' . esc_url( get_permalink( get_the_ID() ) ) . '"><img src="https://featherfoot.local/wp-content/uploads/2020/07/bg-btn.png" width="60px;" /> ' . __( 'Read More',
 			'featherfoottrail' ) . '</a></p>';
 		}
+*/
 		return $post_excerpt;
 	}
 }
@@ -210,15 +212,69 @@ add_filter( 'get_terms_orderby', function( $orderby, $query_vars ) {
 
 }, 10, 2 );
 
-/**
- * FacetWP: Cache
- */
-/*
-add_filter( 'facetwp_cache_lifetime', 'facet_cache_lifetime' );
+// Custom Login functions
 
-function facet_cache_lifetime( $seconds ) {
+function redirect_login_page() {
 	
-    return 86400; // one day
+	global $page_id;
+	
+	$login_page = home_url();
+	
+	$page = basename($_SERVER['REQUEST_URI']);
+
+	if ( $page == 'wp-login.php' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+
+		wp_redirect($login_page);
+		
+		exit;
+	
+	}
+	
+}
+add_action('init', 'redirect_login_page');
+
+function redirect_lostpassword_page() {
+    
+    if ( 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+	    
+        if ( is_user_logged_in() ) {
+        
+            $this->redirect_logged_in_user();
+        
+            exit;
+        
+        }
+ 
+        wp_redirect( home_url() );
+        
+        exit;
+        
+    }
     
 }
-*/
+add_action( 'login_form_lostpassword', 'redirect_lostpassword_page');
+
+function login_failed() {
+	
+    $login_page  = home_url();
+    
+    wp_redirect($login_page . "?login=failed");
+    
+    exit;
+
+}
+add_action( 'wp_login_failed', 'login_failed' );
+
+function verify_username_password( $user, $username, $password ) {
+    
+    $login_page  = home_url();
+    
+    if ( $username == "" || $password == "" ) {
+		
+		wp_redirect( $login_page . "?login=empty" );
+        
+		exit;
+    
+    }
+}
+add_filter( 'authenticate', 'verify_username_password', 1, 3);

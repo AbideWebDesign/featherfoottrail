@@ -9,42 +9,52 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<tr>
 
-	<td>
+<div class="bg-white shadow mb-4">			
+
+	<div class="row no-gutters">
 		
-		<div class="container py-3">
+		<div class="col-xl-3">
 			
-			<div class="row">
+			<?php if ( get_field('featured_image') ): ?>
+			
+				<?php $image = get_field('featured_image'); ?>
 				
-				<div class="col-xl-2">
-					
-					<?php if ( get_field('featured_image') ): ?>
-					
-						<?php $image = get_field('featured_image'); ?>
-						
-						<?php echo wp_get_attachment_image( $image['id'], 'thumbnail', false, array('class'=>'img-fluid') ); ?>
-					
-					<?php endif; ?>
-					
-				</div>
-				
-				<div class="col-xl-10">
-					
-					<a href="<?php the_permalink(); ?>"><?php the_title( '<h3 class="entry-title">', '</h3>' ); ?></a>
-	
-					<div class="py-2">
-				
-						<?php the_field('brief_description'); ?>
-				
-					</div>
-					
-				</div>
+				<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image( $image['id'], 'thumbnail', false, array('class'=>'img-fluid img-fill') ); ?></a>
+			
+			<?php endif; ?>
+			
+		</div>
 		
+		<div class="col-xl-9 align-self-center">
+			
+			<div class="p-4">
+				
+				<div class="text-sm mb-3"><strong>
+					
+					<?php $cats = get_field('categories'); ?>
+					
+					<?php foreach($cats as $cat): ?>
+					
+						| <a href="<?php echo home_url(); ?>/resources/?_categories=<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+					
+					<?php endforeach; ?>
+					
+				</strong></div>
+				
+				<a href="<?php the_permalink(); ?>"><?php the_title( '<h3 class="entry-title">', '</h3>' ); ?></a>
+		
+				<div class="py-2">
+			
+					<?php the_field('brief_description'); ?>
+			
+				</div>
+				
 			</div>
 			
 		</div>
 	
-	</td>
-	
-</tr>
+	</div>
+
+</div>
+			

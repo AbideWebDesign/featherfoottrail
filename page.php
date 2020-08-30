@@ -17,7 +17,7 @@ get_header();
 
 ?>
 
-<div id="page-wrapper" class="bg-light py-5">
+<div id="page-wrapper" class="bg-secondary py-5">
 
 	<div class="container">
 		

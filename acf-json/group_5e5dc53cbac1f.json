@@ -314,6 +314,44 @@
             "mime_types": ""
         },
         {
+            "key": "field_5f4abc35bf8d2",
+            "label": "Activities",
+            "name": "activities",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f4abc49bf8d3",
+            "label": "Books\/Stories",
+            "name": "books_stories",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5ecedcfb8e736",
             "label": "Jigsaw Puzzle",
             "name": "jigsaw_puzzle",
@@ -345,7 +383,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1590615420
+    "modified": 1598733419
 }
