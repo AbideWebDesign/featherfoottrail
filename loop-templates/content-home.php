@@ -25,8 +25,8 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 			
 			<div class="featured-content-header pt-4 d-md-none">
 					
-				<div class="heading-divider heading-divider-light text-center"><img src="<?php echo home_url('/wp-content/uploads/2020/07/feather-gray-white.png'); ?>" width="75px"></div>
-			
+				<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
+							
 				<h2 class="text-white text-center my-3">From the Trial</h2>
 					
 			</div>
@@ -35,9 +35,9 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 				
 				<div class="featured-content-header pt-4 d-none d-md-block">
 					
-					<div class="heading-divider text-center"><img src="<?php echo home_url('/wp-content/uploads/2020/07/feather-gray-white.png'); ?>" width="75px"></div>
-				
-					<h2 class="text-center my-3">From the Trial</h2>
+					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>				
+					
+					<h2 class="text-center mb-3">From the Trial</h2>
 					
 				</div>
 				

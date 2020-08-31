@@ -140,7 +140,7 @@ button, .btn {
 	
 	&:before, &:after {
 		position: absolute;
-	    top: 5rem;
+	    top: 4rem;
 	    height: 1px;
 	    background: $green-dark;
 	    width: calc(50% - 12rem);
@@ -173,6 +173,13 @@ button, .btn {
 	}
 	
 
+}
+.featured-box {
+	.heading-divider {
+		&:before, &:after {
+			top: 5rem;
+		}
+	}
 }
 .wrapper {
 	padding: 100px 0 !important;

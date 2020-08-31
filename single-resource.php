@@ -146,7 +146,7 @@ foreach( $cats as $category ) {
 
 	<?php if ( get_field('full_description') ): ?>
 	
-		<div class="wrapper bg-white">
+		<div class="wrapper-sm bg-white">
 			
 			<div class="container">
 				
@@ -182,13 +182,15 @@ foreach( $cats as $category ) {
 							
 	<?php if ( have_rows('media_files') ): ?>
 	
-		<div class="wrapper bg-white">
+		<div class="wrapper-sm bg-white">
 			
 			<div class="container">
 				
 				<div class="row">
 					
-					<div class="col text-center mb-4">
+					<div class="col-12 text-center mb-4">
+						
+						<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'white' ) ); ?>
 						
 						<h2>Media</h2>
 						
@@ -246,7 +248,7 @@ foreach( $cats as $category ) {
 							
 							<div class="col-lg-9">
 					
-								<?php echo wp_get_attachment_image( $media['id'], 'full', false, array('class'=>'img-fluid img-full') ); ?>
+								<?php echo wp_get_attachment_image( $media['id'], 'full', false, array('class'=>'img-fluid img-fill') ); ?>
 								
 							</div>
 							
@@ -272,6 +274,8 @@ foreach( $cats as $category ) {
 					
 					<div class="col text-center mb-4">
 						
+						<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'blue' ) ); ?>
+
 						<h2>Video</h2>
 						
 					</div>
@@ -314,6 +318,9 @@ foreach( $cats as $category ) {
 					
 						<div class="col text-center mb-4">
 							
+							<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'light', 'type'=>'white' ) ); ?>
+
+
 							<h2 class="text-white">Audio Files</h2>
 							
 						</div>
@@ -710,6 +717,8 @@ foreach( $cats as $category ) {
 						
 						<div class="col-12 text-center">
 							
+							<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'red' ) ); ?>
+
 							<h2>Puzzles</h2>
 							
 							<div class="embed-responsive embed-responsive-16by9">
@@ -728,48 +737,61 @@ foreach( $cats as $category ) {
 										
 		<?php endif; ?>				
 				
+	<?php else: ?>
+	
+		<div class="wrapper-sm bg-light">
 			
-			<?php else: ?>
-			
-				<div class="text-center">
+			<div class="container">
+				
+				<div class="row justify-content-center">
 					
-					<h2>Get Access to over 200 resources for your student</h2>
-					
-					<p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-					
-					<div class="d-flex justify-content-between">
+					<div class="col-12">		
 						
-						<div class="mr-5">
+						<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'white' ) ); ?>
+				
+						<div class="text-center">
 					
-							<img src="<?php echo home_url(); ?>/wp-content/uploads/2020/08/fft_mockup.png" class="img-fluid" />
+							<h2>Get Access to over 1000 resources for your student</h2>
 							
+							<p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+					
 						</div>
+											
+						<div class="d-flex justify-content-between">
+							
+							<div class="mr-5">
 						
-						<div class="bg-white shadow p-5 align-self-center">
-							
-							<h3>Anytime Access, No Installs</h3>
-							
-							<p class="text-sm">Learning never stops! Perfect for your on-the-go schedule, Featherfoot Trail online homeschool curriculum is accessible around the clock. With just a username and password, you're curriculum-ready in seconds.</p>
-							
-							<div class="bg-primary p-4 flex-column">
+								<img src="<?php echo home_url(); ?>/wp-content/uploads/2020/08/fft_mockup.png" class="img-fluid" />
 								
-								<p class="text-white"><strong>Monthly Individual Online Plan</strong></p>
+							</div>
+							
+							<div class="bg-white shadow p-5 align-self-center">	
+	
+								<h3>Anytime Access, No Installs</h3>
 								
-								<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary btn-white">Sign Up Now</a>
+								<p class="text-sm">Learning never stops! Perfect for your on-the-go schedule, Featherfoot Trail online homeschool curriculum is accessible around the clock. With just a username and password, you're curriculum-ready in seconds.</p>
+								
+								<div class="bg-primary p-4 flex-column text-center">
+									
+									<p class="text-white"><strong>Monthly Individual Online Plan</strong></p>
+									
+									<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary btn-white">Sign Up Now</a>
+									
+								</div>
 								
 							</div>
 							
 						</div>
-						
-					</div>
 					
-				</div>
+					</div>
 			
-			<?php endif; ?>
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
+				</div>
+				
+			</div>
+			
+		</div>	
+	
+	<?php endif; ?>
 
 </div><!-- #single-wrapper -->
 
