@@ -831,26 +831,30 @@ foreach( $cats as $category ) {
 
 </div>
 
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-	
-	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-	
-		<div class="modal-content">
+<?php if ( get_field('video_file') ): ?>
+
+	<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
 		
-			<div class="modal-body p-0">
-	
-				<div class="embed-responsive embed-responsive-16by9">
-        
-					<iframe class="embed-responsive-item" src="<?php the_field('video_file'); ?>?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-     
-				</div>	
-				
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		
+			<div class="modal-content">
+			
+				<div class="modal-body p-0">
+		
+					<div class="embed-responsive embed-responsive-16by9">
+	        
+						<iframe class="embed-responsive-item" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	     
+					</div>	
+					
+				</div>
+			
 			</div>
 		
 		</div>
 	
 	</div>
-
-</div>
-		
+	
+<?php endif; ?>
+	
 <?php get_footer();
