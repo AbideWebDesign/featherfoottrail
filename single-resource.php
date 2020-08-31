@@ -306,7 +306,7 @@ foreach( $cats as $category ) {
 					
 						<div class="col-xl-10">
 							
-							<?php $video_url = get_video_embed( get_field('video_file') ); ?>
+							<?php $video_url = get_video_embed( get_field('video_file_2') ); ?>
 													
 							<div class="embed-responsive embed-responsive-16by9">
 								
