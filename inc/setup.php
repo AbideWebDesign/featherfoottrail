@@ -278,3 +278,20 @@ function verify_username_password( $user, $username, $password ) {
     }
 }
 add_filter( 'authenticate', 'verify_username_password', 1, 3);
+
+function change_hr( $content ) {
+	
+	if ( ( is_singular() ) && ( is_main_query() ) ) {
+	        
+	        $string = $content;
+ 
+ 	        $replacement = '<div class="blog-divider"><div class="heading-divider text-center mb-5"><img src="' . get_field('feather_1', 'options') . '" width="75px"></div></div>';
+
+	        $content = preg_replace('/<hr \/>/i', $replacement, $string);
+	
+	}       
+	
+	return $content;
+}
+
+add_filter('the_content', 'change_hr');

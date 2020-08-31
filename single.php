@@ -12,7 +12,7 @@ get_header();
 
 ?>
 
-<div class="wrapper bg-secondary" id="single-wrapper">
+<div class="wrapper-sm-bottom bg-secondary" id="single-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 
@@ -20,17 +20,15 @@ get_header();
 			
 			<div class="col-12">
 
-				<h1 class="text-center"><?php the_title(); ?></h1>
+				<h1 class="text-center text-white"><?php the_title(); ?></h1>
 				
-				<div class="text-sm mb-2 pb-2 border-bottom text-center">
+				<div class="text-sm text-center">
+										
+					<?php $cats = get_the_category(); ?>
 					
-					Categories: 
+					<?php foreach ( $cats as $cat ): ?>
 					
-					<?php $cats = get_field('categories'); ?>
-					
-					<?php foreach($cats as $cat): ?>
-					
-						| <a href="<?php echo home_url(); ?>/resources/?_categories=<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+						<a class="text-white" href="<?php echo home_url(); ?>/category/<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
 					
 					<?php endforeach; ?>
 					
@@ -40,7 +38,15 @@ get_header();
 			
 		</div>
 		
-		<div class="row">
+	</div>
+	
+</div>
+
+<div class="wrapper bg-white" id="single-content-wrapper">
+	
+	<div class="container">
+		
+		<div class="row justify-content-center">
 			
 			<div class="col-xl-8">
 				
@@ -50,12 +56,6 @@ get_header();
 				
 				<?php endwhile; ?>
 							
-			</div>
-			
-			<div class="col-xl-4">
-				
-				<h3>Sidebar</h3>
-								
 			</div>
 
 		</div><!-- .row -->

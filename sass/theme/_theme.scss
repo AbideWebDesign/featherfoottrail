@@ -12,7 +12,7 @@ h2, h3 {
 	color: $green-dark;
 }
 h2 {
-	font-size: 45px;
+	font-size: 40px;
 }
 h3 {
 	font-size: 27px;
@@ -29,6 +29,12 @@ p {
 }
 a.plain {
 	text-decoration: underline;
+}
+a.nostyle {
+	&:hover {
+		text-decoration: none;
+		
+	}
 }
 .text-sm {
 	font-size: $font-size-sm;
@@ -96,6 +102,9 @@ button, .btn {
 	font-weight: bold;
 	text-transform: uppercase;
 	
+	&:hover {
+		text-decoration: none;
+	}
 	img {
 		padding-right: .5em;
 	}
@@ -196,6 +205,9 @@ button, .btn {
 .wrapper-sm-top {
 	padding: 50px 0 100px 0 !important;
 }
+.wrapper-box {
+	padding: 50px 30px !important;
+}
 @include media-breakpoint-down(md) {
 	.wrapper {
 		padding: 50px 0 !important;
@@ -274,6 +286,11 @@ button, .btn {
 	}
 }
 // Resource Search
+.facetwp-load-more {
+	@extend .btn;
+	@extend .btn-primary;
+	@extend .btn-sm;
+}
 #wrapper-resource {
 	.facetwp-facet:not(.facetwp-facet-search_resources) {
 		margin-bottom: 1em;
@@ -359,6 +376,9 @@ button, .btn {
 
 //Memberpress
 // Register
+.mp_wrapper h1, .mp_wrapper h2, .mp_wrapper h3 {
+	font-weight: bold;
+}
 .memberpressproduct-template-page-register {
 	.mepr_error {
 		margin-bottom: 0 !important;
@@ -387,14 +407,29 @@ button, .btn {
 }
 #mepr-account-nav {
 	background-color: $green-dark;
-	padding: 1em;
+	padding: 0em;
+	.mepr-nav-item {
+		padding: 0;
+	}	
+	
 	a {
+		text-transform: uppercase;
+		font-weight: bold;
 		color: white;
+		padding: .8em 1.2em;
+		
+		&:hover {
+			background-color: white;
+			color: $primary;
+			text-decoration: none;
+		}
 	}
-}
-#mepr_account_form {
-	background-color: white;
-	padding: 1em;
+	.mepr-active-nav-tab {
+		a {
+			background-color: white;
+			color: $primary;
+		}
+	}
 }
 #mepr-account-welcome-message {
 	color: white;
@@ -432,6 +467,22 @@ button, .btn {
 	color: #FF6666;
 	font-size: $font-size-sm;
 }
+#mepr-stripe-payment-form{
+	@extend .wrapper-box;
+	@extend .bg-white;
+	
+	input#mepr_strip_card_name {
+		@extend .form-control;
+	}
+	.mepr-submit {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+}
+.mepr-stripe-card-element {
+	@extend .form-control;
+}
+
 // Login Box
 #login-register-password {
 	.nav-tabs .nav-link {
@@ -466,5 +517,34 @@ button, .btn {
 #wrapper-audio {
 	.mejs-container {
 		width: 100% !important;
+	}
+}
+
+// Archive
+
+// Single Content Wrapper 
+#single-content-wrapper {
+	h2 {
+		margin: 1em 0 .5em;
+	}
+	ul {
+		padding: 0;
+		margin: 2em 0;
+		list-style-type: none;
+		li {
+			padding-left: 70px;
+			margin-bottom: 2em;
+			min-height: 34px;
+			background: url('/wp-content/uploads/2020/08/left-foot.svg') no-repeat top left;
+		}
+	}
+	.blog-divider {
+		position: relative;
+		
+		.heading-divider {
+			&:before, &:after {
+				top: 1.5rem;
+			}
+		}
 	}
 }

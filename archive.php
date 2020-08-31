@@ -14,53 +14,52 @@ get_header();
 
 ?>
 
-<div class="wrapper" id="archive-wrapper">
+<div class="wrapper-sm-bottom bg-secondary" id="archive-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<main class="site-main" id="main">
+			<div class="col">
+				
+				<header class="page-header text-center">
+					<?php
+					the_archive_title( '<h1 class="page-title text-white">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
+				</header><!-- .page-header -->
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
 
-				<?php if ( have_posts() ) : ?>
+<div id="archive-loop-wrapper" class="wrapper bg-light">
+	
+	<div class="container">
+		
+		<?php if ( have_posts() ) : ?>
 
-					<header class="page-header">
-						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-						<?php
+			<?php endwhile; ?>
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', 'single' );
-						?>
+		<?php else : ?>
 
-					<?php endwhile; ?>
+			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-				<?php else : ?>
+		<?php endif; ?>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+		<!-- The pagination component -->
+		<?php featherfoottrail_pagination(); ?>
 
-				<?php endif; ?>
+	</div>
 
-			</main><!-- #main -->
-
-			<!-- The pagination component -->
-			<?php featherfoottrail_pagination(); ?>
-
-		</div> <!-- .row -->
-
-	</div><!-- #content -->
-
-	</div><!-- #archive-wrapper -->
+</div>
 
 <?php get_footer();
