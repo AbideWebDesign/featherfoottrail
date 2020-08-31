@@ -300,6 +300,28 @@ foreach( $cats as $category ) {
 					
 				</div>
 				
+				<?php if ( get_field('video_file_2') ): ?>
+				
+					<div class="row justify-content-center mt-4">
+					
+						<div class="col-xl-10">
+							
+							<?php $video_url = get_video_embed( get_field('video_file') ); ?>
+													
+							<div class="embed-responsive embed-responsive-16by9">
+								
+								  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+		
+								   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+								   
+							</div>
+							
+						</div>
+						
+					</div>
+				
+				<?php endif; ?>
+				
 			</div>
 			
 		</div>

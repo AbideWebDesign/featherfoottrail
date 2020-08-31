@@ -162,6 +162,22 @@
             "placeholder": ""
         },
         {
+            "key": "field_5f4d57dec5d60",
+            "label": "Video File 2",
+            "name": "video_file_2",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5e5dc5a4068d1",
             "label": "Audio File 1",
             "name": "audio_file",
@@ -385,5 +401,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598733419
+    "modified": 1598904295
 }
