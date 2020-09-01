@@ -51,7 +51,7 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 						
 						<div class="d-none d-lg-block"><?php the_excerpt(); ?></div>
 						
-						<div class="d-none d-md-block"><a class="btn-alt" href="<?php the_permalink(); ?>"><img src="<?php echo home_url('/wp-content/uploads/2020/07/bg-btn.png'); ?>" width="60px;" /> Read More</a></div>
+						<div class="d-none d-md-block"><a class="btn-alt" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
 										
 					<?php endforeach; ?>
 					
@@ -59,7 +59,7 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 				
 			</div>
 			
-			<div class="d-md-none text-center mt-3"><a class="btn-alt text-white" href="<?php the_permalink(); ?>"><img src="<?php echo home_url('/wp-content/uploads/2020/07/bg-btn.png'); ?>" width="60px;" /> Read More</a></div>
+			<div class="d-md-none text-center mt-3"><a class="btn-alt text-white" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
 
 			
 		</div>
