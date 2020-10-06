@@ -57,6 +57,8 @@ if ( ! function_exists( 'featherfoottrail_setup' ) ) {
 
 add_image_size('Side Cover', 1067, 1600, true);
 
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
 // Remove tags support from posts
 add_action('init', 'fft_unregister_tags');
 
