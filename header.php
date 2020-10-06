@@ -30,27 +30,27 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 	
 	<div id="wrapper-navbar">
 		
-		<div id="wrapper-header-img" class="d-none d-lg-block">
+		<div id="wrapper-header-img" class="d-none d-xl-block">
 	
 			<?php echo wp_get_attachment_image( get_field('header_image', 'options'), 'full', false ); ?>
 	
 		</div>
 		
-		<div id="wrapper-header-img-mobile" class="d-lg-none" style="background-image: url(<?php echo $header_img_mobile; ?>);">
+		<div id="wrapper-header-img-mobile" class="d-xl-none" style="background-image: url(<?php echo $header_img_mobile; ?>);">
 			
-			<div class="container">
+			<div class="container-fluid">
 				
-				<div class="row justify-content-between">
+				<div class="row justify-content-center">
 					
-					<div class="col-12 col-md-auto text-center">
+					<div class="col-12 text-center">
 						
-						<a href="<?php echo home_url(); ?>"><?php echo wp_get_attachment_image( get_field('logo','options'), 'Full', false, array('class'=>'logo', 'style'=>'width:300px') ); ?></a>
+						<a href="<?php echo home_url(); ?>"><?php echo wp_get_attachment_image( get_field('logo','options'), 'Full', false, array( 'class' => 'logo', 'style' => 'width:300px' ) ); ?></a>
 						
 					</div>
 					
-					<div class="col-12 col-md-auto align-self-center">
+					<div class="col-12  bg-primary py-2">
 						
-						<div class="d-flex justify-content-between bg-primary py-2">
+						<div class="d-flex justify-content-between">
 													
 							<div>
 						
@@ -58,12 +58,20 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 								
 							</div>
 							
-							<div class="d-md-none align-self-center">
+							<div class="align-self-center">
 								
 								<div class="mr-3">
 									
-									<a href="<?php echo home_url('/signup'); ?>"><i class="fa fa-user text-white"></i></a>
+									<?php if ( is_user_logged_in() ): ?>
 									
+										<a href="<?php echo home_url('/signup'); ?>" class="text-white text-lg"><i class="fa fa-user text-white mr-2"></i> <strong>Account</strong></a>
+									
+									<?php else: ?>
+									
+										<a href="<?php echo home_url('/login'); ?>" class="text-white text-lg"><i class="fa fa-user text-white mr-2"></i> <strong>Login/Sign Up</strong></a>
+										
+									<?php endif; ?>
+								
 								</div>
 								
 							</div>
@@ -102,7 +110,7 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 						
 					</div>
 					
-					<div class="col-12 d-none d-lg-block">
+					<div class="col-12 d-none d-xl-block">
 						
 						<nav id="main-nav" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
 							

@@ -14,14 +14,14 @@ $args = array(
 
 $featured_post = get_posts( $args );
 $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false );
-
+$bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', 'options'), 'full', false );
 ?>
 
 <div class="container">
 	
 	<div class="row justify-content-center">
 		
-		<div class="col-md-12 col-xl-9">
+		<div class="col-md-12 col-lg-10 col-xl-8">
 			
 			<div class="featured-content-header pt-4 d-md-none">
 					
@@ -33,25 +33,29 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 				
 			<div class="featured-box bg-paper" style="background:url(<?php echo $bg_paper; ?>);">
 				
-				<div class="featured-content-header pt-4 d-none d-md-block">
+				<div class="featured-content-header pt-3 d-none d-md-block">
 					
 					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>				
 					
-					<h2 class="text-center mb-3">From the Trial</h2>
+					<h2 class="text-center mb-2">From the Trial</h2>
 					
 				</div>
 				
-				<div class="featured-content">
+				<div class="featured-content d-flex flex-column h-100 d-md-block align-self-center py-5 py-md-0">
 					
 					<?php foreach ( $featured_post as $post ): ?>
 				
 						<?php setup_postdata( $post ); ?>
 						
-						<a href="<?php the_permalink(); ?>"><h3 class="mb-0 mt-md-2 mb-md-4 text-center text-md-left"><?php the_title(); ?></h3></a>
-						
-						<div class="d-none d-lg-block"><?php the_excerpt(); ?></div>
-						
-						<div class="d-none d-md-block"><a class="btn-alt" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
+						<div class="align-self-center">
+							
+							<a class="d-flex d-md-block" href="<?php the_permalink(); ?>"><h3 class="mb-0 mt-md-3 mb-lg-4 text-center text-lg-left align-self-center"><?php the_title(); ?></h3></a>
+							
+							<div class="d-none d-md-block"><?php the_excerpt(); ?></div>
+							
+							<div class="text-center text-xl-left mt-3 mt-md-0"><a class="btn-alt" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
+							
+						</div>
 										
 					<?php endforeach; ?>
 					
@@ -59,16 +63,13 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 				
 			</div>
 			
-			<div class="d-md-none text-center mt-3"><a class="btn-alt text-white" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
-
-			
 		</div>
 		
-		<div class="col-lg-3">
+		<div class="col-md-12 col-lg-10 col-xl-4">
 			
 			<!-- Login Start -->
 			
-			<div class="bg-primary p-4 text-white">
+			<div class="bg-primary p-4 text-white d-none d-xl-block">
 				
 				<?php if ( !is_user_logged_in( ) ): ?>
 								
@@ -219,41 +220,66 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 			<?php if ( get_field('monthly_giveaway', 'options' ) ): $giveaway_id = get_field('monthly_giveaway', 'options'); ?>
 			
 				<!-- Monthly Giveaway Start -->
+			
+				<div class="featured-content-header pt-4 d-md-none">
+						
+					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
+								
+					<h2 class="text-white text-center my-3">Monthly Giveaway</h2>
+						
+				</div>
 				
-				<div class="bg-primary px-2 py-4 text-white mt-4">
+				<div class="d-none d-xl-block">
+				
+					<h3 class="text-white text-center my-3">Monthly Giveaway</h3>
 					
-					<h3 class="text-white text-center">Monthly Giveaway</h3>
+				</div>
+				
+				<div id="monthly-giveaway" class="mt-3 w-100" style="background:url( <?php echo $bg_celebrate; ?> );">
 					
-					<div class="row justify-content-center">
-						
-						<div class="col-md-10">
+					<div id="monthly-giveaway-wrap">
+											
+						<div class="row justify-content-center">
 							
-							<?php $image = get_field('featured_image', $giveaway_id ); ?>
-						
-							<a href="<?php the_permalink($giveaway_id); ?>">
-								
-								<?php echo wp_get_attachment_image( $image['id'], 'thumbnail', false, array('class'=>'img-fluid w-100') ); ?>
-								
-							</a>
+							<div class="col-12">
 							
-						</div>
-						
-						<div class="col-12 text-center">
-							
-							<div class="my-2">
-							
-								<strong><?php echo get_the_title($giveaway_id); ?></strong>
+								<h2 class="text-center d-none d-md-block d-xl-none mb-3">Monthly Giveaway</h2>
 								
 							</div>
 							
-							<a href="<?php the_permalink($giveaway_id); ?>" class="btn btn-white btn-sm">View Resource</a>
+							<div class="col-md-auto col-xl-5 align-self-center d-none d-md-flex">
+								
+								<?php $image = get_field('featured_image', $giveaway_id); ?>
+							
+								<a href="<?php the_permalink($giveaway_id); ?>">
+									
+									<?php echo wp_get_attachment_image( $image['id'], 'thumbnail', false, array( 'class'=>'img-fluid w-100' ) ); ?>
+									
+								</a>
+								
+							</div>
+							
+							<div class="col-md-auto col-xl-7 align-self-center text-center text-md-left">
+								
+								<div class="my-2">
+																	
+									<h4><a href="<?php the_permalink($giveaway_id); ?>"><strong><?php echo get_the_title($giveaway_id); ?></strong></a></h4>
+									
+								</div>
+								
+								<div class="mt-3 mt-md-0">
+									
+									<a class="btn-alt" href="<?php the_permalink($giveaway_id); ?>"><img src="<?php the_field('button', 'options'); ?>" /> View</a>
+									
+								</div>
+								
+							</div>
 							
 						</div>
 						
 					</div>
 				
 				</div>
-				
 				
 				<!-- Monthly Giveaway End -->
 			
@@ -264,5 +290,3 @@ $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'
 	</div>
 	
 </div>
-
-

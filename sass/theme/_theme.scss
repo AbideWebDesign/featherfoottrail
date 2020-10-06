@@ -36,8 +36,14 @@ a.nostyle {
 		
 	}
 }
+.text-lg {
+	font-size: $font-size-lg !important;
+}
 .text-sm {
-	font-size: $font-size-sm;
+	font-size: $font-size-sm !important;
+}
+.text-xs {
+	font-size: 12px !important;
 }
 .img-fill {
 	width: 100%;
@@ -114,16 +120,70 @@ button, .btn {
     -moz-appearance: none;
 }
 .bg-paper {
-	background-size: cover !important;
 	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	height: 618px;
+	
+	@include media-breakpoint-down(lg) {
+		height: 574px;
+	}
+	@include media-breakpoint-down(md) {
+		height: 505px;
+	}
+	@include media-breakpoint-down(sm) {
+		height: 255px;
+	}
 }
 .bg-brown {
 	background-color: $brown;
 }
+#monthly-giveaway {
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	height: 300px;
+	.btn-alt {
+		font-size: 15px;
+		img {
+			width: 40px;
+		}
+	}
+	#monthly-giveaway-wrap {
+		padding: 5em 4em;
+	}
+	@include media-breakpoint-up(lg) {
+		h4 {
+			font-size: 18px;
+		}
+	}
+	@include media-breakpoint-down(lg) {
+		background-size: cover !important;
+		height: 570px;
+		display: flex;
+		justify-content: center;
+		
+		#monthly-giveaway-wrap {
+			align-self: center;
+			padding: 4em;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		height: 505px;	
+	}
+	@include media-breakpoint-down(sm) {
+		height: 255px;
+		
+		.btn-alt {
+			font-size: $font-size-base;
+			img {
+				width: 60px;
+			}
+		}
+	}
+}
 .featured-content {
 	padding: 1em 0;
 	max-width: 600px;
-	min-height: 450px;
+	min-height: 481px;
 	margin: auto;
 	
 	a:hover {
@@ -132,13 +192,18 @@ button, .btn {
 	
 	@include media-breakpoint-down(md) {
 		min-height: 280px;
-		max-width: 433px;
+		max-width: 550px;
+		padding: 0;
 	}
 	@include media-breakpoint-down(sm) {
 		min-height: 235px;
 		max-width: 100%;
 		padding: 4em 2.4em;
 	}
+	@include media-breakpoint-down(xs) {
+		padding: 0 2em;
+	}
+
 }
 .heading-divider {
 	margin-top: 2em;

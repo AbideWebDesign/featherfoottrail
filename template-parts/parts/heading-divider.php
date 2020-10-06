@@ -45,7 +45,7 @@
 ?>
 
 
-<div class="heading-divider <?php echo $class; ?> text-center mb-5">
+<div class="heading-divider <?php echo $class; ?> text-center mb-3 mb-xl-5">
 	
 	<img src="<?php echo $img; ?>" width="75px">
 	
