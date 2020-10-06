@@ -134,8 +134,16 @@ button, .btn {
 		height: 255px;
 	}
 }
+.bg-video {
+	padding: 6em;
+	height: 778px;
+}
 .bg-brown {
 	background-color: $brown;
+}
+.border-paper-left {
+	background-repeat: repeat-y;
+	background-position: left top;
 }
 #monthly-giveaway {
 	background-size: cover !important;

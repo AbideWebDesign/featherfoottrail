@@ -201,9 +201,9 @@ foreach( $cats as $category ) {
 				<?php while ( have_rows('media_files') ): the_row(); ?>
 				
 					<?php $media = get_sub_field('file'); ?>
-					
+										
 					<?php if ( $media['mime_type'] == 'application/pdf' ): ?>
-					
+						
 						<div class="row justify-content-center no-gutters mb-4">
 							
 							<div class="col-lg-3">
@@ -237,9 +237,9 @@ foreach( $cats as $category ) {
 						<div class="row justify-content-center no-gutters mb-4">
 							
 							<div class="col-lg-3">
-								
+																	
 								<div class="bg-primary h-100 p-3">
-									
+								
 									<p class="text-white mb-0"><strong><?php the_sub_field('name'); ?></strong></p>
 									
 								</div>
@@ -266,6 +266,8 @@ foreach( $cats as $category ) {
 					
 	<?php if ( get_field('video_file') ): ?>
 		
+		<?php $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false ); ?>
+		
 		<div class="wrapper bg-light">
 	
 			<div class="container">
@@ -287,15 +289,23 @@ foreach( $cats as $category ) {
 					<div class="col-xl-10">
 						
 						<?php $video_url = get_video_embed( get_field('video_file') ); ?>
-												
-						<div class="embed-responsive embed-responsive-16by9">
-							
-							  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
-	
-							   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
-							   
-						</div>
 						
+						<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);">
+						
+							<div class="d-flex h-100 w-100">
+								
+								<div class="embed-responsive embed-responsive-16by9">
+								
+								  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+		
+								   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+								   
+								</div>
+								
+							</div>
+							
+						</div>
+												
 					</div>
 					
 				</div>
@@ -308,12 +318,20 @@ foreach( $cats as $category ) {
 							
 							<?php $video_url = get_video_embed( get_field('video_file_2') ); ?>
 													
-							<div class="embed-responsive embed-responsive-16by9">
+							<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);">
+						
+								<div class="d-flex h-100 w-100">
+									
+									<div class="embed-responsive embed-responsive-16by9">
+									
+									  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+			
+									   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+									   
+									</div>
+									
+								</div>
 								
-								  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
-		
-								   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
-								   
 							</div>
 							
 						</div>
