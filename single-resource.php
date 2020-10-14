@@ -20,7 +20,7 @@ foreach( $cats as $category ) {
 	
 	$url = '/resources/?_categories=' . $category->slug;
 	
-	$output .= '<a class="text-primary" href="' . $url . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+	$output .= '<a class="text-primary" href="' . $url . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'featherfoottrail' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 
 }
 
@@ -346,11 +346,9 @@ foreach( $cats as $category ) {
 					
 	<?php endif; ?>
 					
-	<?php if ( get_field('audio_file') ): ?>
+	<?php if ( get_field('audio_file') || get_field('audio_repeater') ): ?>
 	
-		<?php $file = get_field('audio_file'); ?>
-	
-			<div id="wrapper-audio" class="wrapper bg-secondary">
+		<div id="wrapper-audio" class="wrapper bg-secondary">
 				
 				<div class="container">
 					
@@ -385,52 +383,60 @@ foreach( $cats as $category ) {
 										
 									</tr>
 									
-									<tr>
-									
-										<td>
+									<?php if ( get_field('audio_repeater') ): ?>
+		
+										<?php while ( have_rows('audio_repeater') ): the_row(); ?>
+										
+											<?php $file = get_sub_field('audio_repeater_file'); ?>
 											
-											<?php if ( $file['title'] ): ?>
-												
-												<p class="mb-0"><?php echo $file['title']; ?></p>
-												
-											<?php else: ?>
-											
-												<p class="mb-0"><?php echo $file['filename']; ?></p>
+											<tr>
 
-											<?php endif; ?>
-											
-										</td>
+												<td>
+													
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+												
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
 										
-										<td>
-											
-											<?php if ( $file['description'] ): ?>
-						
-												<p><?php echo $file['description']; ?></p>
-											
-											<?php else: ?>
-											
-												-
-																		
-											<?php endif; ?>
+										<?php endwhile; ?>
+		
+									<?php else: ?>
+		
+										<?php $file = get_field('audio_file'); ?>
+	
+										<tr>
 
-										</td>
-										
-										<td>
-											
-											<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-											
-										</td>
-										
-									</tr>
-									
-									<?php if ( get_field('audio_file_2') ): ?>
-						
-										<?php $file = get_field('audio_file_2'); ?>
-										
-										<tr>
-									
 											<td>
-											
+												
 												<?php if ( $file['title'] ): ?>
 													
 													<p class="mb-0"><?php echo $file['title']; ?></p>
@@ -465,269 +471,313 @@ foreach( $cats as $category ) {
 											
 										</tr>
 										
-									<?php endif; ?>
-									
-									<?php if ( get_field('audio_file_3') ): ?>
-						
-										<?php $file = get_field('audio_file_3'); ?>
-										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
-												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
-	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_2') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_2'); ?>
 											
-										</tr>
+											<tr>
 										
-									<?php endif; ?>
-
-									<?php if ( get_field('audio_file_4') ): ?>
-						
-										<?php $file = get_field('audio_file_4'); ?>
+												<td>
+												
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+												
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
-												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
-	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_3') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_3'); ?>
 											
-										</tr>
+											<tr>
 										
-									<?php endif; ?>
-
-									<?php if ( get_field('audio_file_5') ): ?>
-						
-										<?php $file = get_field('audio_file_5'); ?>
-										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
+												<td>
 												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_4') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_4'); ?>
 											
-										</tr>
+											<tr>
 										
-									<?php endif; ?>
-
-									<?php if ( get_field('audio_file_6') ): ?>
-						
-										<?php $file = get_field('audio_file_6'); ?>
-										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
+												<td>
 												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_5') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_5'); ?>
 											
-										</tr>
+											<tr>
 										
-									<?php endif; ?>
-									
-									<?php if ( get_field('audio_file_7') ): ?>
-						
-										<?php $file = get_field('audio_file_7'); ?>
-										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
+												<td>
 												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_6') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_6'); ?>
 											
-										</tr>
+											<tr>
 										
-									<?php endif; ?>
-									
-									<?php if ( get_field('audio_file_8') ): ?>
-						
-										<?php $file = get_field('audio_file_8'); ?>
+												<td>
+												
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 										
-										<tr>
-									
-											<td>
-											
-												<?php if ( $file['title'] ): ?>
-													
-													<p class="mb-0"><?php echo $file['title']; ?></p>
-													
-												<?php else: ?>
-												
-													<p class="mb-0"><?php echo $file['filename']; ?></p>
-	
-												<?php endif; ?>
-												
-											</td>
-											
-											<td>
-												
-												<?php if ( $file['description'] ): ?>
+										<?php if ( get_field('audio_file_7') ): ?>
 							
-													<p><?php echo $file['description']; ?></p>
-												
-												<?php else: ?>
-												
-													-
-																			
-												<?php endif; ?>
-	
-											</td>
-																						
-											<td>
-												
-												<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
-												
-											</td>
+											<?php $file = get_field('audio_file_7'); ?>
 											
-										</tr>
+											<tr>
+										
+												<td>
+												
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
+										
+										<?php if ( get_field('audio_file_8') ): ?>
+							
+											<?php $file = get_field('audio_file_8'); ?>
+											
+											<tr>
+										
+												<td>
+												
+													<?php if ( $file['title'] ): ?>
+														
+														<p class="mb-0"><?php echo $file['title']; ?></p>
+														
+													<?php else: ?>
+													
+														<p class="mb-0"><?php echo $file['filename']; ?></p>
+		
+													<?php endif; ?>
+													
+												</td>
+												
+												<td>
+													
+													<?php if ( $file['description'] ): ?>
+								
+														<p><?php echo $file['description']; ?></p>
+													
+													<?php else: ?>
+													
+														-
+																				
+													<?php endif; ?>
+		
+												</td>
+																							
+												<td>
+													
+													<?php echo do_shortcode( '[audio ' . $file['url'] . ' loop=yes]' ); ?>
+													
+												</td>
+												
+											</tr>
+											
+										<?php endif; ?>
 										
 									<?php endif; ?>
 									
