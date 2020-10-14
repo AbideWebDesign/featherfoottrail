@@ -135,8 +135,15 @@ button, .btn {
 	}
 }
 .bg-video {
-	padding: 6em;
-	height: 778px;
+	background-size: contain !important;
+	
+	@include media-breakpoint-down(xl) {
+		min-height: 700px;
+	}	
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		min-height: auto;
+	}
 }
 .bg-brown {
 	background-color: $brown;

@@ -286,25 +286,25 @@ foreach( $cats as $category ) {
 				
 				<div class="row justify-content-center">
 					
-					<div class="col-xl-10">
+					<div class="col-lg-9">
 						
 						<?php $video_url = get_video_embed( get_field('video_file') ); ?>
 						
-						<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);">
+<!-- 						<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);"> -->
 						
-							<div class="d-flex h-100 w-100">
-								
+<!-- 							<div class="p-3 p-md-5 w-100 align-self-center"> -->
+																	
 								<div class="embed-responsive embed-responsive-16by9">
-								
-								  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+
+									<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
 		
-								   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+									<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
 								   
 								</div>
-								
-							</div>
+																	
+<!-- 							</div> -->
 							
-						</div>
+<!-- 						</div> -->
 												
 					</div>
 					
@@ -314,25 +314,25 @@ foreach( $cats as $category ) {
 				
 					<div class="row justify-content-center mt-4">
 					
-						<div class="col-xl-10">
+						<div class="col-lg-9">
 							
 							<?php $video_url = get_video_embed( get_field('video_file_2') ); ?>
 													
-							<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);">
-						
-								<div class="d-flex h-100 w-100">
-									
+<!-- 							<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);"> -->
+							
+<!-- 								<div class="p-3 p-md-5 w-100 align-self-center"> -->
+																		
 									<div class="embed-responsive embed-responsive-16by9">
 									
-									  <iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
 			
-									   <div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+										<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
 									   
 									</div>
-									
-								</div>
-								
-							</div>
+																		
+<!-- 								</div>	 -->
+															
+<!-- 							</div> -->
 							
 						</div>
 						
