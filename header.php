@@ -26,7 +26,7 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 
 <body <?php body_class(); ?>>
 	
-<div class="site" id="page">
+<div id="wrapper-page" class="wrapper-page" style="background-color: <?php the_field('site_border_color', 'options'); ?>">
 	
 	<div id="wrapper-navbar">
 		
@@ -124,7 +124,7 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 
 									<li class="nav-item flex-fill"><a id="navlink-3" href="<?php the_field('nav_link_3', 'options'); ?>"><?php echo wp_get_attachment_image( get_field('nav_link_image_3', 'options'), 'full', false, array('style'=>'width: 152px') ); ?></a></li>
 
-									<li class="nav-item flex-fill"><a id="navlink-4" href="<?php the_field('nav_link_4', 'options'); ?>"><?php echo wp_get_attachment_image( get_field('nav_link_image_4', 'options'), 'full', false, array('style'=>'width: 152px') ); ?></a></li>
+									<li class="nav-item flex-fill"><!-- <a id="navlink-4" href="<?php the_field('nav_link_4', 'options'); ?>"><?php echo wp_get_attachment_image( get_field('nav_link_image_4', 'options'), 'full', false, array('style'=>'width: 152px') ); ?></a> --></li>
 
 									<li class="nav-item flex-fill"><a id="navlink-5" href="<?php the_field('nav_link_5', 'options'); ?>"><?php echo wp_get_attachment_image( get_field('nav_link_image_5', 'options'), 'full', false, array('style'=>'width: 152px') ); ?></a></li>
 						

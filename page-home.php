@@ -12,7 +12,7 @@ get_header();
 
 ?>
 
-<div id="page-wrapper" class="bg-secondary wrapper-sm">
+<div id="page-wrapper" class="bg-secondary wrapper">
 				
 	<?php while ( have_posts() ) : the_post(); ?>
 		

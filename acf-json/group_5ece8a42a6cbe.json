@@ -500,7 +500,7 @@
         },
         {
             "key": "field_5f18b018f5fef",
-            "label": "Backgrounds",
+            "label": "Backgrounds and Borders",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -513,6 +513,21 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_5f874749fcd77",
+            "label": "Site Border Color",
+            "name": "site_border_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#F9EEE3"
         },
         {
             "key": "field_5f18b022f5ff0",
@@ -896,5 +911,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602013673
+    "modified": 1602701241
 }

@@ -60,7 +60,7 @@ get_header();
 							
 				<div class="mt-3">
 							
-					<?php echo do_shortcode( '[facetwp facet="result_count_resources"]' ); ?>
+					
 							
 				</div>
 				
@@ -69,9 +69,9 @@ get_header();
 					<div class="sidebar-heading bg-primary p-2 mb-2">
 				
 						<div class="text-white mb-0">Filters</div>
-						
+
 					</div>
-										
+									
 					<?php echo do_shortcode( '[facetwp facet="categories"]' ); ?>
 					
 					<button class="btn btn-primary btn-block" onclick="FWP.reset()">Clear</button>
@@ -82,41 +82,50 @@ get_header();
 			
 			<div id="wrapper-content" class="col-xl-8">
 				
-				<?php if ( have_posts() ) : ?>
-
-					<?php /* Start the Loop */ ?>
-					
-<!--
-					<div class="row justify-content-between">
+				<div class="row justify-content-between">
 												
-						<div class="col-md-auto">
-							
-							<?php echo do_shortcode( '[facetwp facet="per_page_resources"]' ); ?>
-							
-						</div>
+					<div class="col-md-auto mb-3">
+
+						<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
 						
 					</div>
 					
--->
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php get_template_part( 'loop-templates/content', 'single-resource' ); ?>
-
-					<?php endwhile; ?>
-							
+					<div class="col-md-auto align-self-center">
+						
+						<?php echo do_shortcode( '[facetwp facet="result_count_resources"]' ); ?>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="col-12">
+				
+						<?php if ( have_posts() ) : ?>
+												
+							<?php while ( have_posts() ) : the_post(); ?>
+		
+								<?php get_template_part( 'loop-templates/content', 'single-resource' ); ?>
+		
+							<?php endwhile; ?>
+					
+						<?php else : ?>
+		
+							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+		
+						<?php endif; ?>
+		
+						<!-- The pagination component -->
+						<?php echo do_shortcode( '[facetwp facet="load_more_resources"]' ) ?>
 			
-				<?php else : ?>
+					</div>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-				<?php endif; ?>
-
-				<!-- The pagination component -->
-				<?php echo do_shortcode( '[facetwp facet="load_more_resources"]' ) ?>
-			
+				</div> <!-- .row -->
+				
 			</div>
-
-		</div> <!-- .row -->
+			
+		</div>
 
 	</div><!-- #content -->
 

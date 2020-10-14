@@ -145,6 +145,16 @@ button, .btn {
 	background-repeat: repeat-y;
 	background-position: left top;
 }
+.wrapper-page {
+	padding: 0 3em;
+	
+	@include media-breakpoint-down('md') {
+		padding: 0 1em;
+	}
+	@include media-breakpoint-down('xs') {
+		padding: 0;	
+	}
+}
 #monthly-giveaway {
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
@@ -362,7 +372,9 @@ button, .btn {
 .facetwp-load-more {
 	@extend .btn;
 	@extend .btn-primary;
-	@extend .btn-sm;
+}
+.facetwp-sort-select {
+	@extend .custom-select;
 }
 #wrapper-resource {
 	.facetwp-facet:not(.facetwp-facet-search_resources) {
