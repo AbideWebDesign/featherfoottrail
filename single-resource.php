@@ -266,7 +266,9 @@ foreach( $cats as $category ) {
 					
 	<?php if ( get_field('video_file') ): ?>
 		
-		<?php $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false ); ?>
+		<?php //$bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false ); ?>
+		
+		<?php $videos = explode( ' ', get_field('video_file') ); ?>
 		
 		<div class="wrapper bg-light">
 	
@@ -284,62 +286,40 @@ foreach( $cats as $category ) {
 					
 				</div>
 				
-				<div class="row justify-content-center">
-					
-					<div class="col-lg-9">
-						
-						<?php $video_url = get_video_embed( get_field('video_file') ); ?>
-						
-<!-- 						<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);"> -->
-						
-<!-- 							<div class="p-3 p-md-5 w-100 align-self-center"> -->
-																	
-								<div class="embed-responsive embed-responsive-16by9">
-
-									<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
-		
-									<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
-								   
-								</div>
-																	
-<!-- 							</div> -->
-							
-<!-- 						</div> -->
-												
-					</div>
-					
-				</div>
 				
-				<?php if ( get_field('video_file_2') ): ?>
 				
-					<div class="row justify-content-center mt-4">
-					
+					<div class="row justify-content-center">
+						
 						<div class="col-lg-9">
 							
-							<?php $video_url = get_video_embed( get_field('video_file_2') ); ?>
-													
-<!-- 							<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);"> -->
+							<?php foreach( $videos as $video ): ?>
 							
-<!-- 								<div class="p-3 p-md-5 w-100 align-self-center"> -->
-																		
-									<div class="embed-responsive embed-responsive-16by9">
+								<?php $video_url = get_video_embed( $video ); ?>
+								
+		<!-- 						<div class="bg-paper bg-video d-flex" style="background:url(<?php echo $bg_paper; ?>);"> -->
+								
+		<!-- 							<div class="p-3 p-md-5 w-100 align-self-center"> -->
+																			
+										<div class="embed-responsive embed-responsive-16by9 mb-4">
+		
+											<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+				
+											<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+										   
+										</div>
+																			
+		<!-- 							</div> -->
 									
-										<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
-			
-										<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
-									   
-									</div>
-																		
-<!-- 								</div>	 -->
-															
-<!-- 							</div> -->
-							
+		<!-- 						</div> -->
+		
+							<?php endforeach; ?>
+													
 						</div>
 						
 					</div>
+					
 				
-				<?php endif; ?>
-				
+								
 			</div>
 			
 		</div>
