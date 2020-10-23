@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 $nature_args = array(
 	'numberposts'	=> 1,
-	'category'		=> 188,
+	'category'		=> 255, //188 local
 );
 
 $featured_post = get_field('from_the_trail_featured', 'options');
