@@ -125,13 +125,21 @@ button, .btn {
 	height: 618px;
 	
 	@include media-breakpoint-down(lg) {
-		height: 574px;
+		height: 655px;
+		width: 100%;
 	}
 	@include media-breakpoint-down(md) {
 		height: 505px;
 	}
 	@include media-breakpoint-down(sm) {
 		height: 255px;
+	}
+}
+.bg-padding {
+	padding: 0 5em;
+	
+	@include media-breakpoint-down(md) {
+		padding: 0 4em;
 	}
 }
 .bg-video {
@@ -162,18 +170,22 @@ button, .btn {
 		padding: 0;	
 	}
 }
-#monthly-giveaway {
+.home-sidebar {
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
 	height: 300px;
+	
 	.btn-alt {
 		font-size: 15px;
 		img {
 			width: 40px;
 		}
 	}
-	#monthly-giveaway-wrap {
+	.home-sidebar-wrap {
 		padding: 5em 4em;
+	}
+	.home-sidebar-wrap-sm {
+		padding: 0 4em;
 	}
 	@include media-breakpoint-up(lg) {
 		h4 {
@@ -182,14 +194,15 @@ button, .btn {
 	}
 	@include media-breakpoint-down(lg) {
 		background-size: cover !important;
-		height: 570px;
+		height: 655px;
 		display: flex;
 		justify-content: center;
 		
-		#monthly-giveaway-wrap {
+		.home-sidebar-wrap {
 			align-self: center;
 			padding: 4em;
 		}
+		
 	}
 	@include media-breakpoint-down(md) {
 		height: 505px;	
@@ -214,7 +227,6 @@ button, .btn {
 	a:hover {
 		text-decoration: none;
 	}
-	
 	@include media-breakpoint-down(md) {
 		min-height: 280px;
 		max-width: 550px;
@@ -272,6 +284,9 @@ button, .btn {
 	}
 	
 
+}
+.featured-content-header {
+	position: relative;
 }
 .featured-box {
 	.heading-divider {

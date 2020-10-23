@@ -8,56 +8,55 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$args = array(
+$nature_args = array(
 	'numberposts'	=> 1,
+	'category'		=> 188,
 );
 
-$featured_post = get_posts( $args );
+$featured_post = get_field('from_the_trail_featured', 'options');
+$nature_post = get_posts( $nature_args );
 $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false );
 $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', 'options'), 'full', false );
+$bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'options'), 'full', false );
+
+
 ?>
 
 <div class="container">
 	
 	<div class="row justify-content-center">
 		
-		<div class="col-md-12 col-lg-10 col-xl-8">
+		<div class="col-md-12 col-lg-12 col-xl-8">
 			
-			<div class="featured-content-header pt-4 d-md-none">
+			<div class="featured-content-header d-none d-xl-block">
+												
+				<h2 class="text-white text-center mb-3">From the Trial</h2>
 					
+			</div>
+			
+			<div class="featured-content-header d-block d-sm-none pt-4">
+						
 				<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
 							
-				<h2 class="text-white text-center my-3">From the Trial</h2>
+				<h3 class="text-white text-center my-3">From the Trail</h3>
 					
 			</div>
 				
-			<div class="featured-box bg-paper" style="background:url(<?php echo $bg_paper; ?>);">
+			<div class="featured-box d-flex bg-paper" style="background:url(<?php echo $bg_paper; ?>);">
 				
-				<div class="featured-content-header pt-3 d-none d-md-block">
+				<div class="align-self-center px-5 w-100">					
 					
-					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>				
-					
-					<h2 class="text-center mb-2">From the Trial</h2>
-					
-				</div>
-				
-				<div class="featured-content d-flex flex-column h-100 d-md-block align-self-center py-5 py-md-0">
-					
-					<?php foreach ( $featured_post as $post ): ?>
-				
-						<?php setup_postdata( $post ); ?>
+					<div class="d-md-block px-lg-5 py-md-0">
 						
-						<div class="align-self-center">
-							
-							<a class="d-flex d-md-block" href="<?php the_permalink(); ?>"><h3 class="mb-0 mt-md-3 mb-lg-4 text-center text-lg-left align-self-center"><?php the_title(); ?></h3></a>
-							
-							<div class="d-none d-md-block"><?php the_excerpt(); ?></div>
-							
-							<div class="text-center text-xl-left mt-3 mt-md-0"><a class="btn-alt" href="<?php the_permalink(); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>
-							
-						</div>
-										
-					<?php endforeach; ?>
+						<h2 class="text-center d-none d-md-block d-xl-none mb-lg-5">From the Trail</h2>
+						
+						<a class="d-flex d-md-block" href="<?php the_permalink( $featured_post->ID ); ?>"><h3 class="mb-0 mt-md-3 mb-md-4 text-center text-lg-left align-self-center"><?php echo get_the_title( $featured_post->ID ); ?></h3></a>
+						
+						<div class="d-none d-lg-block mb-3"><?php echo get_the_excerpt( $featured_post->ID ); ?></div>
+						
+						<div class="text-center text-lg-left mt-3 mt-md-0"><a class="btn-alt" href="<?php the_permalink( $featured_post->ID ); ?>"><img src="<?php the_field('button', 'options'); ?>" width="60px;" /> Read More</a></div>								
+						
+					</div>
 					
 				</div>
 				
@@ -65,7 +64,7 @@ $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', '
 			
 		</div>
 		
-		<div class="col-md-12 col-lg-10 col-xl-4">
+		<div class="col-md-12 col-lg-12 col-xl-4">
 			
 			<!-- Login Start -->
 			
@@ -225,7 +224,7 @@ $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', '
 						
 					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
 								
-					<h2 class="text-white text-center my-3">Monthly Giveaway</h2>
+					<h3 class="text-white text-center my-3">Monthly Giveaway</h3>
 						
 				</div>
 				
@@ -235,9 +234,9 @@ $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', '
 					
 				</div>
 				
-				<div id="monthly-giveaway" class="mt-3 w-100" style="background:url( <?php echo $bg_celebrate; ?> );">
+				<div class="home-sidebar mt-3 w-100" style="background:url( <?php echo $bg_celebrate; ?> );">
 					
-					<div id="monthly-giveaway-wrap">
+					<div class="home-sidebar-wrap">
 											
 						<div class="row justify-content-center">
 							
@@ -282,6 +281,54 @@ $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', '
 				</div>
 				
 				<!-- Monthly Giveaway End -->
+			
+			<?php endif; ?>
+			
+			<?php if ( $nature_post ): ?>
+			
+				<!-- Nature Fact Start -->
+			
+				<div class="featured-content-header d-block d-sm-none pt-4 mt-3">
+						
+					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
+								
+					<h3 class="text-white text-center my-3">Cool Nature Facts</h3>
+						
+				</div>
+				
+				<div class="d-none d-xl-block mt-5">
+				
+					<h3 class="text-white text-center my-3">Cool Nature Facts</h3>
+					
+				</div>
+				
+				<div class="home-sidebar mt-3 w-100 d-flex" style="background:url( <?php echo $bg_nature; ?> );">
+					
+					<div class="home-sidebar-wrap-sm">
+											
+						<div class="row justify-content-center h-100">
+														
+							<div class="col-12 align-self-center text-center text-md-left">
+								
+								<h2 class="text-center my-3 d-none d-sm-block d-xl-none">Cool Nature Facts</h2>
+																	
+								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php the_permalink( $nature_post[0]->ID ); ?>"><strong><?php echo get_the_title( $nature_post[0]->ID ); ?></strong></a></h4>
+								
+								<div class="mt-3 mt-md-0 d-none d-md-block text-center text-lg-left">
+									
+									<a class="btn-alt" href="<?php the_permalink( $nature_post[0]->ID ); ?>"><img src="<?php the_field('button', 'options'); ?>" /> Learn More</a>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+				
+				</div>
+				
+				<!-- Nature Fact End -->
 			
 			<?php endif; ?>
 			
