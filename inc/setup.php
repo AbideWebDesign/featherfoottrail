@@ -285,3 +285,62 @@ function change_hr( $content ) {
 }
 
 add_filter('the_content', 'change_hr');
+
+function fwp_sortby_views( $options, $params ) {
+	
+	$options = [
+		'default' => [
+		    'label' => __( 'Sort By', 'fwp' ),
+		    'query_args' => [
+		        'orderby' => 'title',
+		        'order' => 'ASC',
+		    ]
+		],
+		'title_asc' => [
+		    'label' => __( 'Title (A-Z)', 'fwp' ),
+		    'query_args' => [
+		        'orderby' => 'title',
+		        'order' => 'ASC',
+		    ]
+		],
+		'title_desc' => [
+		    'label' => __( 'Title (Z-A)', 'fwp' ),
+		    'query_args' => [
+		        'orderby' => 'title',
+		        'order' => 'DESC',
+		    ]
+		],
+		'date_desc' => [
+		    'label' => __( 'Date (Newest)', 'fwp' ),
+		    'query_args' => [
+		        'orderby' => 'date',
+		        'order' => 'DESC',
+		    ]
+		],
+		'date_asc' => [
+		    'label' => __( 'Date (Oldest)', 'fwp' ),
+		    'query_args' => [
+		        'orderby' => 'date',
+		        'order' => 'ASC',
+		    ]
+		]
+	];
+	
+	return $options;
+
+}
+
+add_filter( 'facetwp_sort_options', 'fwp_sortby_views', 10, 2 );
+
+function default_sort_order($query){
+	
+	if ( is_archive() ) {
+
+       $query->set( 'order', 'ASC' );
+       $query->set( 'orderby', 'title' );
+    
+    }
+       
+};
+
+add_action( 'pre_get_posts', 'default_sort_order'); 

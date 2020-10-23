@@ -21,6 +21,7 @@ $header_img_mobile = wp_get_attachment_image_url( get_field('header_image_mobile
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="<?php echo home_url('/wp-content/themes/featherfoottrail/favicon.png'); ?>" />
 
 </head>
 
