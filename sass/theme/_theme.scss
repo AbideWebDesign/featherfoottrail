@@ -161,7 +161,7 @@ button, .btn {
 	background-position: left top;
 }
 .wrapper-page {
-	padding: 0 3em;
+	padding: 3em;
 	
 	@include media-breakpoint-down('md') {
 		padding: 0 1em;
@@ -448,11 +448,23 @@ button, .btn {
 		}
 		.facetwp-depth {
 			margin-left: 0;
-			background-color: #f7f7f7;
+			background-color: $brown;
 			
-			.facetwp-depth {
-				background-color: #ccc;
+			.facetwp-checkbox {
+				border-bottom-color: white;
+				color: white;
+				
+				&:before {
+					color: white !important;
+				}
+				.facetwp-counter {
+					color: white;
+				}
 			}
+			.facetwp-depth {
+				background-color: darken($brown, 20);
+			}
+			
 		}
 		.facetwp-checkbox.checked {
 		    	background: none;
