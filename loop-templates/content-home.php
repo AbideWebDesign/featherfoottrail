@@ -30,7 +30,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 			
 			<div class="featured-content-header d-none d-xl-block">
 												
-				<h2 class="text-white text-center mb-3">From the Trial</h2>
+				<h2 class="text-white text-center mb-3">From the Trail</h2>
 					
 			</div>
 			
