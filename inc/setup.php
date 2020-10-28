@@ -333,15 +333,11 @@ add_filter( 'facetwp_sort_options', 'fwp_sortby_views', 10, 2 );
 
 function default_sort_order($query){
 	
-	if ( is_archive() && ! is_admin() ) {
+	if ( is_archive() ) {
 
        $query->set( 'order', 'ASC' );
-       $query->set( 'orderby', 'title' );
-    
-    } else {
-	    
-	    $query->set( 'orderby', 'modified' );
-	    
+       $query->set( 'orderby', 'modified' );
+
     }
        
 };

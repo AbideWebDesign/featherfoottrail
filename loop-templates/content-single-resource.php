@@ -31,14 +31,18 @@ defined( 'ABSPATH' ) || exit;
 			<div class="p-4">
 				
 				<div class="text-sm mb-3"><strong>
+
+					<?php if ( get_field('categories') ): ?>
 					
-					<?php $cats = get_field('categories'); ?>
+						<?php $cats = get_field('categories'); ?>
 					
-					<?php foreach($cats as $cat): ?>
-					
-						| <a href="<?php echo home_url(); ?>/resources/?_categories=<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
-					
-					<?php endforeach; ?>
+						<?php foreach($cats as $cat): ?>
+						
+							| <a href="<?php echo home_url(); ?>/resources/?_categories=<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+						
+						<?php endforeach; ?>
+						
+					<?php endif; ?>
 					
 				</strong></div>
 				

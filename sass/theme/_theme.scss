@@ -455,12 +455,14 @@ button, .btn {
 		    border-bottom: 1px dotted #ccc;
 		    font-size: $font-size-sm;
 		    line-height: 100%;
+		    font-weight: bold;
 		}
 		.facetwp-depth {
 			margin-left: 0;
 			background-color: #FDFFDB;
 			
 			.facetwp-checkbox {
+				font-weight: normal;
 /*
 				border-bottom-color: white;
 				color: white;
@@ -475,6 +477,7 @@ button, .btn {
 			}
 			.facetwp-depth {
 				background-color: darken($brown, 20);
+				
 			}
 			
 		}
@@ -489,6 +492,7 @@ button, .btn {
 		    margin-right: .5rem;
 		    vertical-align: middle;
 		    color: $green-light;
+		    font-weight: normal;
 		}
 		.facetwp-type-checkboxes .facetwp-checkbox.checked::before {
 		    content: "\f14a";
