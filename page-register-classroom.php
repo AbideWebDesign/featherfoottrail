@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Register
+ * Template Name: Register Classroom
  *
  * @package featherfoottrail
  */
@@ -24,7 +24,7 @@ get_header('simple');
 								
 				<?php while ( have_posts() ) : the_post(); ?>
 		
-					<?php echo do_shortcode('[mepr-membership-registration-form id="1461"]' ); ?>
+					<?php echo do_shortcode('[mepr-membership-registration-form id="5014"]' ); ?>
 		
 				<?php endwhile; // end of the loop. ?>
 									

@@ -467,58 +467,8 @@ foreach( $cats as $category ) {
 				
 	<?php else: ?>
 	
-		<div class="wrapper-sm bg-light">
+		<?php echo get_template_part('template-parts/parts/content', 'membership-promo'); ?>
 			
-			<div class="container">
-				
-				<div class="row justify-content-center">
-					
-					<div class="col-12">		
-						
-						<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'white' ) ); ?>
-				
-						<div class="text-center">
-					
-							<h2>Get Access to over 1000 resources for your student</h2>
-							
-							<p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-					
-						</div>
-											
-						<div class="d-flex justify-content-between">
-							
-							<div class="mr-5">
-						
-								<img src="<?php echo home_url(); ?>/wp-content/uploads/2020/08/fft_mockup.png" class="img-fluid" />
-								
-							</div>
-							
-							<div class="bg-white shadow p-5 align-self-center">	
-	
-								<h3>Anytime Access, No Installs</h3>
-								
-								<p class="text-sm">Learning never stops! Perfect for your on-the-go schedule, Featherfoot Trail online homeschool curriculum is accessible around the clock. With just a username and password, you're curriculum-ready in seconds.</p>
-								
-								<div class="bg-primary p-4 flex-column text-center">
-									
-									<p class="text-white"><strong>Monthly Individual Online Plan</strong></p>
-									
-									<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary btn-white">Sign Up Now</a>
-									
-								</div>
-								
-							</div>
-							
-						</div>
-					
-					</div>
-			
-				</div>
-				
-			</div>
-			
-		</div>	
-	
 	<?php endif; ?>
 
 </div><!-- #single-wrapper -->

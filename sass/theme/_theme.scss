@@ -24,6 +24,12 @@ h1, h2, h3 {
 	font-family: $font-family-heading;
 	font-weight: 800;
 }
+h2 {
+	span {
+		font-size: $font-size-base;
+		font-weight: bold;
+	}
+}
 p {
 	font-size: $font-size-base;
 }
@@ -44,6 +50,9 @@ a.nostyle {
 }
 .text-xs {
 	font-size: 12px !important;
+}
+.text-brown {
+	color: $brown;
 }
 .img-fill {
 	width: 100%;
