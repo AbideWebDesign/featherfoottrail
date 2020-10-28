@@ -30,7 +30,7 @@ get_header('simple');
 			
 			<div class="col-lg-5">
 				
-				<div class="bg-light p-3 text-center">
+				<div class="bg-light p-3 text-center mb-3 mb-md-0">
 					
 					<div class="text-center mb-4">
 						
@@ -42,7 +42,7 @@ get_header('simple');
 					
 					<h2 class="text-brown mb-4">$9.95<span>/month</span></h2>
 					
-					<a href="<?php echo home_url('/register/basic'); ?>" class="btn btn-secondary btn-block btn-lg">Register</a>
+					<a href="<?php echo home_url('/register/basic'); ?>" class="btn btn-secondary btn-block btn-lg">Sign Up Now</a>
 					
 				</div>
 				
@@ -62,7 +62,7 @@ get_header('simple');
 					
 					<h2 class="text-brown mb-4">$14.95<span>/month</span></h2>
 					
-					<a href="<?php echo home_url('/register/classroom'); ?>" class="btn btn-secondary btn-block btn-lg">Register</a>
+					<a href="<?php echo home_url('/register/classroom'); ?>" class="btn btn-secondary btn-block btn-lg">Sign Up Now</a>
 					
 				</div>				
 				
