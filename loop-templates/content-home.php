@@ -9,9 +9,9 @@
 defined( 'ABSPATH' ) || exit;
 
 $featured_post = get_field('from_the_trail_featured', 'options');
-$bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false );
-$bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', 'options'), 'full', false );
-$bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'options'), 'full', false );
+$bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'Paper Background', false );
+$bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', 'options'), 'Paper Background', false );
+$bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'options'), 'Paper Background', false );
 
 ?>
 

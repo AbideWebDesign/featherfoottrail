@@ -55,7 +55,7 @@ if ( ! function_exists( 'featherfoottrail_setup' ) ) {
 	}
 }
 
-add_image_size('Side Cover', 1067, 1600, true);
+add_image_size('Paper Background', 900);
 
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 

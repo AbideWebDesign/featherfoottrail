@@ -168,9 +168,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "post_format",
                 "operator": "==",
-                "value": "1470"
+                "value": "aside"
             }
         ]
     ],
@@ -197,5 +197,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1603901581
+    "modified": 1603913704
 }
