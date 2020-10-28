@@ -257,7 +257,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								
 								<div class="my-2">
 																	
-									<h4><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title'); ?></strong></a></h4>
+									<h4><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title', 'options'); ?></strong></a></h4>
 									
 								</div>
 								
@@ -281,7 +281,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 			
 			<?php if ( get_field('display_cool_nature_facts', 'options' ) ): ?>
 			
-				<?php $link = get_field('cool_nature_link', 'options'); ?>
+				<?php $link = get_field('cool_nature_facts_link', 'options'); ?>
 			
 				<!-- Nature Fact Start -->
 			
@@ -309,7 +309,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								
 								<h2 class="text-center my-3 d-none d-sm-block d-xl-none">Cool Nature Facts</h2>
 																	
-								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_title'); ?></strong></a></h4>
+								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h4>
 								
 								<div class="mt-3 mt-md-0 d-none d-md-block text-center text-lg-left">
 									

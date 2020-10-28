@@ -894,10 +894,10 @@
             "ui": 1
         },
         {
-            "key": "field_5f999666e612d",
-            "label": "Home Fields",
-            "name": "home_fields",
-            "type": "clone",
+            "key": "field_5f99cc3ba4fe1",
+            "label": "Monthly Giveaway",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -906,13 +906,154 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5f99936386f64"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f99cc5ca4fe2",
+            "label": "Display Monthly Giveaway",
+            "name": "display_monthly_giveaway",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f99cc81a4fe3",
+            "label": "Monthly Giveaway Title",
+            "name": "monthly_giveaway_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f99cc8aa4fe4",
+            "label": "Monthly Giveaway Image",
+            "name": "monthly_giveaway_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f99cc98a4fe5",
+            "label": "Monthly Giveaway Link",
+            "name": "monthly_giveaway_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5f99cca2a4fe6",
+            "label": "Cool Nature Facts",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f99ccb2a4fe7",
+            "label": "Display Cool Nature Facts",
+            "name": "display_cool_nature_facts",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f99ccd3a4fe8",
+            "label": "Cool Nature Facts Title",
+            "name": "cool_nature_facts_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f99ccd7a4fe9",
+            "label": "Cool Nature Facts Link",
+            "name": "cool_nature_facts_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -932,5 +1073,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603901114
+    "modified": 1603914979
 }
