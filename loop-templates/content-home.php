@@ -8,17 +8,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$nature_args = array(
-	'numberposts'	=> 1,
-	'category'		=> 245, //188 local
-);
-
 $featured_post = get_field('from_the_trail_featured', 'options');
-$nature_post = get_posts( $nature_args );
 $bg_paper = wp_get_attachment_image_url( get_field('paper_background', 'options'), 'full', false );
 $bg_celebrate = wp_get_attachment_image_url( get_field('celebrate_background', 'options'), 'full', false );
 $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'options'), 'full', false );
-
 
 ?>
 
@@ -216,8 +209,10 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 			
 			<!-- Login End -->
 			
-			<?php if ( get_field('monthly_giveaway', 'options' ) ): $giveaway_id = get_field('monthly_giveaway', 'options'); ?>
+			<?php if ( get_field('display_monthly_giveaway', 'options' ) ): ?>
 			
+				<?php $link = get_field('monthly_giveaway_link', 'options'); ?>
+				
 				<!-- Monthly Giveaway Start -->
 			
 				<div class="featured-content-header pt-4 d-md-none">
@@ -248,11 +243,11 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 							
 							<div class="col-md-auto col-xl-5 align-self-center d-none d-md-flex">
 								
-								<?php $image = get_field('featured_image', $giveaway_id); ?>
+								<?php $image = get_field('monthly_giveaway_image', 'options'); ?>
 							
-								<a href="<?php the_permalink($giveaway_id); ?>">
+								<a href="<?php echo $link['url']; ?>">
 									
-									<?php echo wp_get_attachment_image( $image['id'], 'thumbnail', false, array( 'class'=>'img-fluid w-100' ) ); ?>
+									<?php echo wp_get_attachment_image( $image, 'thumbnail', false, array( 'class'=>'img-fluid w-100' ) ); ?>
 									
 								</a>
 								
@@ -262,13 +257,13 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								
 								<div class="my-2">
 																	
-									<h4><a href="<?php the_permalink($giveaway_id); ?>"><strong><?php echo get_the_title($giveaway_id); ?></strong></a></h4>
+									<h4><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title'); ?></strong></a></h4>
 									
 								</div>
 								
 								<div class="mt-3 mt-md-0">
 									
-									<a class="btn-alt" href="<?php the_permalink($giveaway_id); ?>"><img src="<?php the_field('button', 'options'); ?>" /> View</a>
+									<a class="btn-alt" href="<?php echo $link['url']; ?>"><img src="<?php the_field('button', 'options'); ?>" target="<?php echo $link['target']; ?>" /> <?php echo $link['title']; ?></a>
 									
 								</div>
 								
@@ -284,7 +279,9 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 			
 			<?php endif; ?>
 			
-			<?php if ( $nature_post ): ?>
+			<?php if ( get_field('display_cool_nature_facts', 'options' ) ): ?>
+			
+				<?php $link = get_field('cool_nature_link', 'options'); ?>
 			
 				<!-- Nature Fact Start -->
 			
@@ -312,11 +309,11 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								
 								<h2 class="text-center my-3 d-none d-sm-block d-xl-none">Cool Nature Facts</h2>
 																	
-								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php the_permalink( $nature_post[0]->ID ); ?>"><strong><?php echo get_the_title( $nature_post[0]->ID ); ?></strong></a></h4>
+								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_title'); ?></strong></a></h4>
 								
 								<div class="mt-3 mt-md-0 d-none d-md-block text-center text-lg-left">
 									
-									<a class="btn-alt" href="<?php the_permalink( $nature_post[0]->ID ); ?>"><img src="<?php the_field('button', 'options'); ?>" /> Learn More</a>
+									<a class="btn-alt" href="<?php echo $link['url']; ?>"><img src="<?php the_field('button', 'options'); ?>" /> <?php echo $link['title']; ?></a>
 									
 								</div>
 								

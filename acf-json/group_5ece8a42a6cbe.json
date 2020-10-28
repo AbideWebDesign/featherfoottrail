@@ -637,44 +637,6 @@
             "delay": 0
         },
         {
-            "key": "field_5f4a913719307",
-            "label": "Monthly Giveaway",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f4a911819306",
-            "label": "Monthly Giveaway",
-            "name": "monthly_giveaway",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "resource"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_5f4a94374c397",
             "label": "Footer",
             "name": "",
@@ -930,6 +892,27 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5f999666e612d",
+            "label": "Home Fields",
+            "name": "home_fields",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f99936386f64"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -949,5 +932,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603473773
+    "modified": 1603901114
 }

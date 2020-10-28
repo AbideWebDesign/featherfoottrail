@@ -142,16 +142,15 @@ function fft_register_taxes() {
 	register_taxonomy( "resource_category", [ "resource" ], $args );
 }
 
-if ( function_exists('acf_add_options_page') ) {
+if ( function_exists( 'acf_add_options_page' ) ) {
 	
-	acf_add_options_page(array(
+	acf_add_options_page( array(
 		'page_title' 	=> 'Global Content',
 		'menu_title'	=> 'Global Content',
 		'menu_slug' 	=> 'global-content',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
-	));
-	
+	) );
 }
 
 add_filter( 'excerpt_more', 'featherfoottrail_custom_excerpt_more' );

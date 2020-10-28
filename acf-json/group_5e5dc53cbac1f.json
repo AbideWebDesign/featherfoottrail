@@ -162,27 +162,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_5f4d57dec5d60",
-            "label": "Video File 2",
-            "name": "video_file_2",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_5f874db3daa87",
             "label": "Audio Files",
             "name": "audio_repeater",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "URL must be an audio file.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -193,9 +177,34 @@
             "collapsed": "field_5f874dd4daa88",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "row",
             "button_label": "Add Audio File",
             "sub_fields": [
+                {
+                    "key": "field_5f999ee205534",
+                    "label": "Audio Type",
+                    "name": "audio_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "File": "File",
+                        "URL": "URL"
+                    },
+                    "default_value": "File",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
                 {
                     "key": "field_5f874dd4daa88",
                     "label": "Audio File",
@@ -203,7 +212,15 @@
                     "type": "file",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f999ee205534",
+                                "operator": "==",
+                                "value": "File"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -214,243 +231,87 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5f999f0605535",
+                    "label": "Audio URL",
+                    "name": "audio_repeater_url",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f999ee205534",
+                                "operator": "==",
+                                "value": "URL"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f99a14da0b1a",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5f99a158a0b1b",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5f99a166a0b1c",
+                            "label": "URL",
+                            "name": "url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            "key": "field_5f874ee6b4012",
-            "label": "Hide Legacy Audio",
-            "name": "hide_legacy_audio",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5e5dc5a4068d1",
-            "label": "Audio File 1",
-            "name": "audio_file",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caaba7b483",
-            "label": "Audio File 2",
-            "name": "audio_file_2",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caac37b484",
-            "label": "Audio File 3",
-            "name": "audio_file_3",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caac57b485",
-            "label": "Audio File 4",
-            "name": "audio_file_4",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caac77b486",
-            "label": "Audio File 5",
-            "name": "audio_file_5",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caaca7b487",
-            "label": "Audio File 6",
-            "name": "audio_file_6",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caacc7b488",
-            "label": "Audio File 7",
-            "name": "audio_file_7",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5e8caacd7b489",
-            "label": "Audio File 8",
-            "name": "audio_file_8",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f874ee6b4012",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
         },
         {
             "key": "field_5f4abc35bf8d2",
@@ -524,5 +385,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602703237
+    "modified": 1603903996
 }
