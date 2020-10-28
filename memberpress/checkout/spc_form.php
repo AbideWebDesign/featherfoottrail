@@ -175,7 +175,7 @@
 	        <div>  <!-- Transaction Invoice shows up here  --> </div>
 	      </div>
 	    <?php } ?>
-		<img src="<?php echo home_url('/wp-content/uploads/2020/08/News-224-636632023302815635.png'); ?>" class="img-fluid" width="150" />
+		<img src="<?php the_field('security_icon', 'options'); ?>" class="img-fluid" width="150" />
 	
 	    <?php if($mepr_options->require_tos): ?>
 	      <div class="mp-form-row mepr_tos">
@@ -188,7 +188,7 @@
 	
 	    <?php if($mepr_options->require_privacy_policy && $privacy_page_link = MeprAppHelper::privacy_policy_page_link()): ?>
 	      <div class="mp-form-row">
-	        <label for="mepr_agree_to_privacy_policy<?php echo $unique_suffix; ?>" class="mepr-checkbox-field mepr-form-input" required>
+	        <label for="mepr_agree_to_privacy_policy<?php echo $unique_suffix; ?>" class="mepr-checkbox-field mepr-form-input text-sm" required>
 	          <input type="checkbox" name="mepr_agree_to_privacy_policy" id="mepr_agree_to_privacy_policy<?php echo $unique_suffix; ?>" />
 	          <?php echo preg_replace('/%(.*)%/', '<a href="' . $privacy_page_link . '" target="_blank">$1</a>', __($mepr_options->privacy_policy_title, 'memberpress')); ?>
 	        </label>

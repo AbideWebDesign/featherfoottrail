@@ -137,7 +137,7 @@
       </div>
     <?php endif; ?>
 
-    <?php if($mepr_options->require_privacy_policy && $privacy_page_link = MeprAppHelper::privacy_policy_page_link()): ?>
+    <?php if($mepr_options->require_privacy_policy): ?>
       <div class="mp-form-row">
         <label for="mepr_agree_to_privacy_policy<?php echo $unique_suffix; ?>" class="mepr-checkbox-field mepr-form-input text-sm" required>
           <input type="checkbox" name="mepr_agree_to_privacy_policy" id="mepr_agree_to_privacy_policy<?php echo $unique_suffix; ?>" />
