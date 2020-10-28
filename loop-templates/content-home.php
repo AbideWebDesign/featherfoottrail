@@ -145,7 +145,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 									
 											<div class="flex-fill">
 									
-												<a href="<?php echo home_url('/register/basic'); ?>" class="btn btn-brown btn-block">Sign Up</a>
+												<a href="<?php echo home_url('/register/'); ?>" class="btn btn-brown btn-block">Sign Up</a>
 									
 											</div>
 											
