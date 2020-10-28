@@ -14,7 +14,7 @@ get_header();
 
 ?>
 
-<div class="bg-secondary wrapper wrapper-sm-bottom">
+<div class="bg-secondary wrapper-sm">
 
 	<div class="container">
 		
@@ -22,13 +22,7 @@ get_header();
 		
 			<div class="col-xl-5 align-self-center">
 			
-				<h1 class="text-white">Resource library</h1>
-				
-			</div>
-			
-			<div class="col-xl-7">
-				
-				<p class="lead mb-0 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				<h1 class="text-white mb-0">Resource library</h1>
 				
 			</div>
 			

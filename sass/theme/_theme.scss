@@ -667,3 +667,31 @@ button, .btn {
 		}
 	}
 }
+
+// Gravity Forms 
+body {
+	.gform_button.button {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+	}
+	.gform_footer {
+		text-align: center;
+	}
+	.gfield_required {
+		display: none;
+	}
+	.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+		border: none;
+	}
+	.gform_wrapper div.validation_error {
+		border-top: none;
+		font-size: $font-size-sm;
+	}
+	.gform_wrapper .gfield_error .gfield_label {
+		color: $body-color;
+	}
+	.gform_wrapper .field_description_below .gfield_description {
+		padding-top: 0;
+	}
+}

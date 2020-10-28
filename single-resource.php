@@ -26,7 +26,7 @@ foreach( $cats as $category ) {
 
 ?>
 
-<div class="wrapper-sm-bottom bg-secondary" id="single-wrapper">
+<div class="wrapper-sm bg-secondary" id="single-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 

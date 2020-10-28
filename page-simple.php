@@ -1,9 +1,6 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @package featherfoottrail
- */
+<?php 
+	
+	// Template Name: Simple
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -24,14 +21,16 @@ get_header();
 				
 				<div class="text-sm text-center">
 										
-					<?php $cats = get_the_category(); ?>
+					<?php
 					
-					<?php foreach ( $cats as $cat ): ?>
+					if ( function_exists('yoast_breadcrumb') ) {
 					
-						<a class="text-white" href="<?php echo home_url(); ?>/category/<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+						yoast_breadcrumb( '<p id="breadcrumbs" class="mb-0">','</p>' );
 					
-					<?php endforeach; ?>
+					}
 					
+					?>
+										
 				</div>
 			
 			</div>
@@ -52,7 +51,7 @@ get_header();
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 				
-					<?php get_template_part('loop-templates/content', 'post'); ?>
+					<?php the_content(); ?>
 				
 				<?php endwhile; ?>
 							
