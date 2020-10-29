@@ -167,6 +167,14 @@ button, .btn {
 		min-height: auto;
 	}
 }
+.bg-primary {
+	#breadcrumbs {
+		color: white;
+		a {
+			color: white;
+		}
+	}
+}
 .bg-brown {
 	background-color: $brown;
 }
