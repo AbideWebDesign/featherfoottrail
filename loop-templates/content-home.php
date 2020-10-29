@@ -21,28 +21,24 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 		
 		<div class="col-md-12 col-lg-12 col-xl-8">
 			
-			<div class="featured-content-header d-none d-xl-block">
-												
-				<h2 class="text-white text-center mb-3">From the Trail</h2>
-					
-			</div>
-			
-			<div class="featured-content-header d-block d-sm-none pt-4">
-						
-				<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
-							
-				<h3 class="text-white text-center my-3">From the Trail</h3>
-					
-			</div>
+			<div class="featured-box d-flex flex-column bg-paper" style="background:url(<?php echo $bg_paper; ?>);">
 				
-			<div class="featured-box d-flex bg-paper" style="background:url(<?php echo $bg_paper; ?>);">
+				<div class="featured-content-header px-5 pt-5 text-center w-100 d-none d-md-block">
+								
+					<h2 class="text-primary my-3 pl-5 pt-4">From the Trail</h3>
+					
+				</div>
 				
-				<div class="align-self-center px-5 w-100">					
+				<div class="align-self-center px-lg-5 pt-5 pt-md-0 w-100">					
 					
 					<div class="d-md-block px-lg-5 py-md-0">
 						
-						<h2 class="text-center d-none d-md-block d-xl-none mb-lg-5">From the Trail</h2>
-						
+						<div class="d-none d-lg-block">
+					
+							<img src="<?php the_field('feather_angeled', 'options'); ?>" width="45" />
+					
+						</div>
+										
 						<a class="d-flex d-md-block" href="<?php the_permalink( $featured_post->ID ); ?>"><h3 class="mb-0 mt-md-3 mb-md-4 text-center text-lg-left align-self-center"><?php echo get_the_title( $featured_post->ID ); ?></h3></a>
 						
 						<div class="d-none d-lg-block mb-3"><?php echo get_the_excerpt( $featured_post->ID ); ?></div>
@@ -215,6 +211,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 				
 				<!-- Monthly Giveaway Start -->
 			
+<!--
 				<div class="featured-content-header pt-4 d-md-none">
 						
 					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
@@ -228,6 +225,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 					<h3 class="text-white text-center my-3">Monthly Giveaway</h3>
 					
 				</div>
+-->
 				
 				<div class="home-sidebar mt-3 w-100" style="background:url( <?php echo $bg_celebrate; ?> );">
 					
@@ -235,11 +233,13 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 											
 						<div class="row justify-content-center">
 							
+<!--
 							<div class="col-12">
 							
 								<h2 class="text-center d-none d-md-block d-xl-none mb-3">Monthly Giveaway</h2>
 								
 							</div>
+-->
 							
 							<div class="col-md-auto col-xl-5 align-self-center d-none d-md-flex">
 								
@@ -257,11 +257,13 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								
 								<div class="my-2">
 																	
-									<h4><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title', 'options'); ?></strong></a></h4>
+									<h4 class="d-none d-xl-block"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title', 'options'); ?></strong></a></h4>
+									
+									<h3 class="d-block d-xl-none text-center"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('monthly_giveaway_title', 'options'); ?></strong></a></h2>
 									
 								</div>
 								
-								<div class="mt-3 mt-md-0">
+								<div class="mt-3 mt-md-0 text-center text-xl-left">
 									
 									<a class="btn-alt" href="<?php echo $link['url']; ?>"><img src="<?php the_field('button', 'options'); ?>" target="<?php echo $link['target']; ?>" /> <?php echo $link['title']; ?></a>
 									
@@ -285,6 +287,7 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 			
 				<!-- Nature Fact Start -->
 			
+<!--
 				<div class="featured-content-header d-block d-sm-none pt-4 mt-3">
 						
 					<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'type'=>'white') ); ?>
@@ -292,12 +295,15 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 					<h3 class="text-white text-center my-3">Cool Nature Facts</h3>
 						
 				</div>
+-->
 				
+<!--
 				<div class="d-none d-xl-block mt-5">
 				
 					<h3 class="text-white text-center my-3">Cool Nature Facts</h3>
 					
 				</div>
+-->
 				
 				<div class="home-sidebar mt-3 w-100 d-flex" style="background:url( <?php echo $bg_nature; ?> );">
 					
@@ -307,9 +313,12 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 														
 							<div class="col-12 align-self-center text-center text-md-left">
 								
-								<h2 class="text-center my-3 d-none d-sm-block d-xl-none">Cool Nature Facts</h2>
+<!-- 								<h2 class="text-center my-3 d-none d-sm-block d-xl-none">Cool Nature Facts</h2> -->
 																	
-								<h4 class="text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h4>
+								<h4 class="d-none d-xl-block text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h4>
+								
+								<h3 class="d-block d-xl-none text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h3>
+
 								
 								<div class="mt-3 mt-md-0 d-none d-md-block text-center text-lg-left">
 									

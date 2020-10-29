@@ -784,6 +784,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_5f9b3671ac59f",
+            "label": "Feather Angeled",
+            "name": "feather_angeled",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5f4d2cd9b4a4a",
             "label": "Right Foot",
             "name": "right_foot",
@@ -1428,5 +1452,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603988384
+    "modified": 1604007552
 }
