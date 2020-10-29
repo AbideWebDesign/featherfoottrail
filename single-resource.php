@@ -302,9 +302,9 @@ foreach( $cats as $category ) {
 																			
 										<div class="embed-responsive embed-responsive-16by9 mb-4">
 		
-											<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>" allowfullscreen></iframe>
+											<iframe class="embed-responsive-item" src="<?php echo $video_url; ?>?theme=dark&rel=0&autoplay=1&autohide=0&cc_load_policy=1&modestbranding=1&fs=0&showinfo=0&rel=0&iv_load_policy=3&mute=0&loop=1" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation" allowfullscreen></iframe>
 				
-											<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div>
+<!-- 											<div class="overlay video-trigger" src="<?php echo $video_url; ?>" data-target="#videoModal" data-toggle="modal"></div> -->
 										   
 										</div>
 																			
