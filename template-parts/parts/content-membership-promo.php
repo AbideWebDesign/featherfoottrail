@@ -2,12 +2,11 @@
 			
 	<div class="container">
 		
-		
 		<div class="row justify-content-center">
 			
 			<div class="col-md-10 col-xl-8">		
 		
-				<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'white' ) ); ?>
+				<?php echo get_template_part( 'template-parts/parts/heading', 'divider', array( 'color'=>'dark', 'type'=>'red' ) ); ?>
 		
 				<div class="text-center">
 			
@@ -43,9 +42,9 @@
 							
 							<div class="bg-primary p-4 flex-column text-center mb-3">
 								
-								<p class="text-white"><strong>Monthly Personal Plan</strong></p>
+								<p class="text-white mb-3"><strong>Monthly Personal Plan</strong></p>
 								
-								<p class="text-white"><strong>$9.95/month</strong></p>
+								<h3 class="text-white mb-3">$9.95<span>/month</span></h3>
 								
 								<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary btn-white">Sign Up Now</a>
 								
@@ -57,9 +56,9 @@
 					
 							<div class="bg-brown p-4 flex-column text-center">
 								
-								<p class="text-white"><strong>Monthly Classroom Plan</strong></p>
+								<p class="text-white mb-3"><strong>Monthly Classroom Plan</strong></p>
 								
-								<p class="text-white"><strong>$14.95/month</strong></p>
+								<h3 class="text-white">$14.95<span>/month</span></h3>
 								
 								<a href="<?php echo home_url(); ?>/register/classroom" class="btn btn-primary btn-white">Sign Up Now</a>
 								

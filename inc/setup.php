@@ -56,6 +56,7 @@ if ( ! function_exists( 'featherfoottrail_setup' ) ) {
 }
 
 add_image_size('Paper Background', 900);
+add_image_size('Logo', 150, 150);
 
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
