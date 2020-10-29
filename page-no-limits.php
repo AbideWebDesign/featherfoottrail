@@ -173,9 +173,9 @@ get_header();
 			
 				<div class="col-xl-3">
 					
-					<div class="d-flex" style="min-width: 50px;">
+					<div class="d-flex">
 						
-						<div class="mr-3"><img src="https://staging.featherfoottrail.com/wp-content/uploads/2020/08/Left-Foot.svg" width="50" /></div>
+						<div class="mr-3" style="min-width: 50px;"><img src="https://staging.featherfoottrail.com/wp-content/uploads/2020/08/Left-Foot.svg" width="50" /></div>
 						
 						<div><strong><?php the_sub_field('supporter_name'); ?></strong></div>
 						
