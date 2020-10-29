@@ -173,7 +173,7 @@ get_header();
 			
 				<div class="col-xl-3">
 					
-					<div class="d-flex">
+					<div class="d-flex" style="min-width: 50px;">
 						
 						<div class="mr-3"><img src="https://staging.featherfoottrail.com/wp-content/uploads/2020/08/Left-Foot.svg" width="50" /></div>
 						
