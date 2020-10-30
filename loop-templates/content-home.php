@@ -318,7 +318,6 @@ $bg_nature = wp_get_attachment_image_url( get_field('nature_background', 'option
 								<h4 class="d-none d-xl-block text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h4>
 								
 								<h3 class="d-block d-xl-none text-center text-lg-left mb-0 mb-md-3"><a href="<?php echo $link['url']; ?>"><strong><?php the_field('cool_nature_facts_title', 'options'); ?></strong></a></h3>
-
 								
 								<div class="mt-3 mt-md-0 d-none d-md-block text-center text-lg-left">
 									

@@ -720,13 +720,17 @@ button, .btn {
 
 // Gravity Forms 
 body {
-	.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), input:focus {
 		@extend .form-control;
+		border-color: $primary;
 	}
 	.gform_button.button {
 		@extend .btn;
 		@extend .btn-primary;
 		@extend .btn-lg;
+	}
+	.gform_wrapper textarea {
+		border-color: $primary;
 	}
 	.gform_footer {
 		text-align: center;
@@ -763,4 +767,19 @@ body {
 	.gform_wrapper .ginput_card_security_code {
 		display: inline-block !important;
 	}
+}
+.mepr-stripe-card-element, .mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
+	border-color: $primary !important;
+}
+.form-control:focus, body .gform_wrapper input:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body input:focus, .mepr-stripe-card-element:focus, #mepr-stripe-payment-form input#mepr_strip_card_name:focus, .mepr-form .mp-form-row input:focus, #wrapper-resource .sidebar .facetwp-type-search .facetwp-search:focus, #loginform input:focus, .widget_categories select:focus, .widget_archive select:focus {
+	border-color: $primary;
+}
+.custom-select, body .gform_wrapper select, .mepr-form .mepr-select-field, #wrapper-resource .facetwp-facet-per_page_resources .facetwp-per-page-select, .facetwp-sort-select {
+	border-radius: 0;
+}
+.bg-primary, .bg-brown {
+	.mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password], .form-control, .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), input:focus, .mepr-stripe-card-element, #mepr-stripe-payment-form input#mepr_strip_card_name, .mepr-form .mp-form-row input, #wrapper-resource .sidebar .facetwp-type-search .facetwp-search, #loginform input, .widget_categories select, .widget_archive select {
+		border: none !important;
+	}
+	
 }
