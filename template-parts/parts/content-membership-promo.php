@@ -58,7 +58,7 @@
 								
 								<p class="text-white mb-3"><strong>Monthly Classroom Plan</strong></p>
 								
-								<h3 class="text-white">$14.95<span>/month</span></h3>
+								<h3 class="text-white mb-3">$14.95<span>/month</span></h3>
 								
 								<a href="<?php echo home_url(); ?>/register/classroom" class="btn btn-light btn-white">Sign Up Now</a>
 								

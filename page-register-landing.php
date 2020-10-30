@@ -34,7 +34,7 @@ get_header('simple');
 					
 					<div class="text-center mb-4">
 						
-						<img src="<?php the_field('feather_4', 'options'); ?>" width="100" />
+						<img src="<?php the_field('feather_4', 'options'); ?>" width="135" />
 						
 					</div>
 					
@@ -54,7 +54,7 @@ get_header('simple');
 					
 					<div class="text-center mb-4">
 						
-						<img src="<?php the_field('feather_2', 'options'); ?>" width="100" />
+						<img src="<?php the_field('feather_2', 'options'); ?>" width="150" />
 						
 					</div>
 					
