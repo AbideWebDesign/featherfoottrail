@@ -40,13 +40,13 @@
 						
 						<div class="col-md-6 col-xl-12">
 							
-							<div class="bg-primary p-4 flex-column text-center mb-3">
+							<div class="bg-yellow p-4 flex-column text-center mb-3">
 								
-								<p class="text-white mb-3"><strong>Monthly Personal Plan</strong></p>
+								<p class="text-primary mb-3"><strong>Monthly Personal Plan</strong></p>
 								
-								<h3 class="text-white mb-3">$9.95<span>/month</span></h3>
+								<h3 class="text-primary mb-3">$9.95<span>/month</span></h3>
 								
-								<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary btn-white">Sign Up Now</a>
+								<a href="<?php echo home_url(); ?>/register/basic" class="btn btn-primary">Sign Up Now</a>
 								
 							</div>
 							
@@ -54,13 +54,13 @@
 					
 						<div class="col-md-6 col-xl-12">
 					
-							<div class="bg-brown p-4 flex-column text-center">
+							<div class="bg-blue p-4 flex-column text-center">
 								
 								<p class="text-white mb-3"><strong>Monthly Classroom Plan</strong></p>
 								
 								<h3 class="text-white">$14.95<span>/month</span></h3>
 								
-								<a href="<?php echo home_url(); ?>/register/classroom" class="btn btn-primary btn-white">Sign Up Now</a>
+								<a href="<?php echo home_url(); ?>/register/classroom" class="btn btn-light btn-white">Sign Up Now</a>
 								
 							</div>
 							

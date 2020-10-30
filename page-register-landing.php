@@ -30,17 +30,17 @@ get_header('simple');
 			
 			<div class="col-lg-5">
 				
-				<div class="bg-light p-3 text-center mb-3 mb-md-0">
+				<div class="bg-yellow p-3 text-center mb-3 mb-md-0">
 					
 					<div class="text-center mb-4">
 						
-						<img src="<?php the_field('feather_1', 'options'); ?>" width="75" />
+						<img src="<?php the_field('feather_4', 'options'); ?>" width="100" />
 						
 					</div>
 					
 					<h3 class="mb-3">Personal Plan</h3>
 					
-					<h2 class="text-brown mb-4">$9.95<span>/month</span></h2>
+					<h2 class="mb-4">$9.95<span>/month</span></h2>
 					
 					<a href="<?php echo home_url('/register/basic'); ?>" class="btn btn-secondary btn-block btn-lg">Sign Up Now</a>
 					
@@ -50,19 +50,19 @@ get_header('simple');
 			
 			<div class="col-lg-5">
 				
-				<div class="bg-light p-3 text-center">
+				<div class="bg-blue p-3 text-center">
 					
 					<div class="text-center mb-4">
 						
-						<img src="<?php the_field('feather_1', 'options'); ?>" width="75" />
+						<img src="<?php the_field('feather_2', 'options'); ?>" width="100" />
 						
 					</div>
 					
-					<h3 class="mb-3">Classroom Plan</h3>
+					<h3 class="mb-3 text-white">Classroom Plan</h3>
 					
-					<h2 class="text-brown mb-4">$14.95<span>/month</span></h2>
+					<h2 class="text-white mb-4">$14.95<span>/month</span></h2>
 					
-					<a href="<?php echo home_url('/register/classroom'); ?>" class="btn btn-secondary btn-block btn-lg">Sign Up Now</a>
+					<a href="<?php echo home_url('/register/classroom'); ?>" class="btn btn-light btn-block btn-lg">Sign Up Now</a>
 					
 				</div>				
 				

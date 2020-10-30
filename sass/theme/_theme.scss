@@ -178,6 +178,12 @@ button, .btn {
 .bg-brown {
 	background-color: $brown;
 }
+.bg-yellow {
+	background-color: #FDFFDB;
+}
+.bg-blue {
+	background-color: #7BAFE3;
+}
 .border-paper-left {
 	background-repeat: repeat-y;
 	background-position: left top;
@@ -190,6 +196,14 @@ button, .btn {
 	}
 	@include media-breakpoint-down('xs') {
 		padding: 0;	
+	}
+}
+.btn-light {
+	color: $primary;
+}
+.bg-blue {
+	.btn-light {
+		color: #7BAFE3;
 	}
 }
 .home-sidebar {
